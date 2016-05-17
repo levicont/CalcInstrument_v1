@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65">
+   <children>
+      <Button layoutX="29.0" layoutY="353.0" mnemonicParsing="false" text="Добавить" />
+      <Button layoutX="123.0" layoutY="353.0" mnemonicParsing="false" text="Отменить" />
+      <Label layoutX="29.0" layoutY="22.0" text="Кредит">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="48.0" text="Компания" />
+      <Label layoutX="30.0" layoutY="115.0" text="Банк" />
+      <Label layoutX="22.0" layoutY="174.0" text="Валюта" />
+      <Label layoutX="321.0" layoutY="48.0" text="Сумма" />
+      <Label layoutX="321.0" layoutY="107.0" text="\%% ставка" />
+      <ComboBox layoutX="23.0" layoutY="74.0" prefWidth="150.0" />
+      <ComboBox layoutX="23.0" layoutY="140.0" prefWidth="150.0" />
+      <ComboBox layoutX="23.0" layoutY="200.0" prefWidth="150.0" />
+      <TextField layoutX="321.0" layoutY="74.0" />
+      <TextField layoutX="321.0" layoutY="140.0" />
+      <TextField layoutX="321.0" layoutY="200.0" />
+      <TextField layoutX="321.0" layoutY="265.0" />
+      <Label layoutX="321.0" layoutY="174.0" text="Дата выдачи" />
+      <Label layoutX="321.0" layoutY="240.0" text="Дата возврата" />
+      <Label layoutX="29.0" layoutY="249.0" text="Тип кредита" />
+      <TextField layoutX="24.0" layoutY="278.0" />
+   </children>
+</AnchorPane>

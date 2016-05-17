@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="397.0" prefWidth="1192.0" snapToPixel="false" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calcinstrument_v1.FXMLDocumentController">
+    <children>
+      <TabPane prefHeight="397.0" prefWidth="1192.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Кредиты">
+            <content>
+              <AnchorPane prefHeight="368.0" prefWidth="727.0">
+                     <children>
+                        <Button layoutX="39.0" layoutY="314.0" mnemonicParsing="false" text="Добавить" />
+                        <Button layoutX="207.0" layoutY="314.0" mnemonicParsing="false" text="Удалить" />
+                        <Button layoutX="123.0" layoutY="314.0" mnemonicParsing="false" text="Изменить" />
+                        <TableView layoutX="39.0" layoutY="103.0" prefHeight="200.0" prefWidth="881.0">
+                          <columns>
+                            <TableColumn prefWidth="50.999969482421875" />
+                            <TableColumn prefWidth="136.0" text="Название компании" />
+                              <TableColumn minWidth="0.0" prefWidth="116.0" text="Название банка" />
+                              <TableColumn prefWidth="85.0" text="Валюта" />
+                              <TableColumn prefWidth="93.0" text="Сумма" />
+                              <TableColumn prefWidth="66.0" text="Ставка" />
+                              <TableColumn prefWidth="87.0" text="Дата выдачи" />
+                              <TableColumn prefWidth="120.0" text="Дата возврата" />
+                              <TableColumn prefWidth="75.0" text="Тип кредита" />
+                          </columns>
+                        </TableView>
+                        <ComboBox layoutX="33.0" layoutY="52.0" prefWidth="150.0" promptText="Компания" />
+                        <ComboBox layoutX="192.0" layoutY="52.0" prefWidth="150.0" promptText="Банк" />
+                        <ComboBox layoutX="357.0" layoutY="52.0" prefWidth="150.0" promptText="Валюта" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Валюта">
+            <content>
+               <AnchorPane>
+                     <children>
+                        <Button layoutX="39.0" layoutY="314.0" mnemonicParsing="false" text="Добавить" />
+                        <Button layoutX="207.0" layoutY="314.0" mnemonicParsing="false" text="Удалить" />
+                        <Button layoutX="123.0" layoutY="314.0" mnemonicParsing="false" text="Изменить" />
+                        <TableView layoutX="39.0" layoutY="47.0" prefHeight="213.0" prefWidth="328.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" />
+                            <TableColumn prefWidth="99.0" text="Код валюты" />
+                              <TableColumn prefWidth="181.0" text="Название валюты" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Банки">
+              <content>
+                 <AnchorPane>
+                     <children>
+                        <Button layoutX="39.0" layoutY="314.0" mnemonicParsing="false" text="Добавить" />
+                        <Button layoutX="207.0" layoutY="314.0" mnemonicParsing="false" text="Удалить" />
+                        <Button layoutX="123.0" layoutY="314.0" mnemonicParsing="false" text="Изменить" />
+                        <TableView layoutX="39.0" layoutY="52.0" prefHeight="200.0" prefWidth="297.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" />
+                            <TableColumn prefWidth="221.00003051757812" text="Название банка" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Компании">
+              <content>
+                 <AnchorPane>
+                     <children>
+                        <Button layoutX="39.0" layoutY="314.0" mnemonicParsing="false" text="Добавить" />
+                        <Button layoutX="207.0" layoutY="314.0" mnemonicParsing="false" text="Удалить" />
+                        <Button layoutX="123.0" layoutY="314.0" mnemonicParsing="false" text="Изменить" />
+                        <TableView layoutX="39.0" layoutY="86.0" prefHeight="197.0" prefWidth="548.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" />
+                            <TableColumn prefWidth="145.00003051757812" text="Название компании" />
+                              <TableColumn minWidth="5.0" prefWidth="146.0" text="Директор" />
+                              <TableColumn prefWidth="180.0" text="Главный бухгалтер" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Расчеты">
+              <content>
+                <AnchorPane />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+    </children>
+</AnchorPane>
