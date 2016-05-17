@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package ui.models;
 
 /**
  *
  * @author Lena
  */
-public class LoanProperty {
+public class Loan {
     
 }

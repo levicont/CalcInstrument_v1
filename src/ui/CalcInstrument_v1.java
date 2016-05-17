@@ -1,4 +1,4 @@
-package View;
+package ui;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,7 +21,7 @@ public class CalcInstrument_v1 extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("TabView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/main_frame.fxml"));
         
         Scene scene = new Scene(root);
         

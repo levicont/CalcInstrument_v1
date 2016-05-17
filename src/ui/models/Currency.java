@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package ui.models;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,25 +13,25 @@ import javafx.beans.property.SimpleStringProperty;
  *
  * @author Lena
  */
-public class CurrencyProperty {
-    private final SimpleIntegerProperty in;
+public class Currency {
+    private final SimpleIntegerProperty id;
     private final SimpleStringProperty code;
     private final SimpleStringProperty name;
     
-public CurrencyProperty (int in, String code, String name) {
-    this.in = new SimpleIntegerProperty(in);
+public Currency (int id, String code, String name) {
+    this.id = new SimpleIntegerProperty(id);
     this.code = new SimpleStringProperty (code);
     this.name = new SimpleStringProperty (name);
 }
-public SimpleIntegerProperty getin() {
-return in;
+public SimpleIntegerProperty getId() {
+return id;
 }
 
-public SimpleStringProperty  getcode() {
+public SimpleStringProperty  getCode() {
 return code;
 }
 
-public SimpleStringProperty getname() {
+public SimpleStringProperty getName() {
 return name;
 }
 
