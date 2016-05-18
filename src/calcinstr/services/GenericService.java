@@ -12,7 +12,7 @@ import java.util.List;
 public interface GenericService<T> {    
     public List<T> getAll() throws CalcInstrumentException;
     public T get(Integer id) throws CalcInstrumentException;
-    public void add(T record) throws CalcInstrumentException;
+    public int add(T record) throws CalcInstrumentException;
     public void update(T record) throws CalcInstrumentException;
     public void delete(T record) throws CalcInstrumentException;    
     

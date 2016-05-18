@@ -26,8 +26,18 @@ public class LoanServiceJavaDBImpl implements LoanService{
         throw new UnsupportedOperationException("Not supported yet."); 
     }
 
+    /*
+    //TODO for last inserted id
+    PreparedStatement pstmt = connection.prepareStatement(
+     "insert into some_table (col1, col2, ..) values (....)", 
+      new String[] { "ID_COLUMN"} ); 
+
+    pstmt.executeUpdate();
+
+    ResultSet rs = pstmt.getGeneratedKeys(); // will return the ID in ID_COLUMN
+    */
     @Override
-    public void add(Loan record) throws CalcInstrumentException {
+    public int add(Loan record) throws CalcInstrumentException {
         throw new UnsupportedOperationException("Not supported yet."); 
     }
 

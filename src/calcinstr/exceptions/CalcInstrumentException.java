@@ -14,4 +14,8 @@ public class CalcInstrumentException extends Exception{
     public CalcInstrumentException(String message){
         super(message);
     }
+    
+    public CalcInstrumentException(String message, Throwable ex){
+        super(message, ex);
+    }
 }

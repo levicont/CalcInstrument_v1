@@ -27,7 +27,7 @@ public class CurrencyServiceJavaDBImpl implements CurrencyService{
     }
 
     @Override
-    public void add(Currency record) throws CalcInstrumentException {
+    public int add(Currency record) throws CalcInstrumentException {
         throw new UnsupportedOperationException("Not supported yet."); 
     }
 

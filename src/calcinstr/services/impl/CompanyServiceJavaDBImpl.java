@@ -27,7 +27,7 @@ public class CompanyServiceJavaDBImpl implements CompanyService{
     }
 
     @Override
-    public void add(Company record) throws CalcInstrumentException {
+    public int add(Company record) throws CalcInstrumentException {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
