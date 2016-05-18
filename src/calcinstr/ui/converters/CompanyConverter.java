@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.models;
+package calcinstr.ui.converters;
+
+import calcinstr.models.Company;
+import calcinstr.ui.entities.CompanyUI;
 
 /**
  *
- * @author Lena
+ * @author Victor
  */
-public class Loan {
+public interface CompanyConverter extends GenericConverter<Company, CompanyUI>{
     
 }
