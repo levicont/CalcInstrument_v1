@@ -5,11 +5,13 @@
  */
 package calcinstr.services;
 
+import calcinstr.exceptions.CalcInstrumentException;
 import calcinstr.models.Company;
 
 /**
  *
  * @author Victor
  */
-public interface CompanyService extends GenericService<Company>{    
+public interface CompanyService extends GenericService<Company>{  
+    public Company getCompanyByName(String name) throws CalcInstrumentException;
 }

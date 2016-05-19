@@ -1,0 +1,15 @@
+2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:45) - Bank was created bank= Bank{Aval}
+2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:45) - Bank was created bank = Bank{Aval}
+2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:45) - Bank was created bank = Bank{Aval}
+2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:45) - Bank was created bank = Bank{Aval}
+2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:45) - Bank was created bank = Bank{Aval}
+2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:47) - Bank was adde in DB with id = 2
+2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:53) - Company was created company = Company{id=0, name=MSI, head=Ivanov, accountant=Petrov}
+2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:53) - Company was created company = Company{id=0, name=MSI, head=Ivanov, accountant=Petrov}
+2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:55) - Company was added in DB with id = 1
+2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:59) - Currency was created currency = Currency{code=USD, name=US Dollar}
+2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:61) - Currency was added in DB with id = 1
+2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:73) - Loan was created currency = Loan{amount=10000.56, rate=2.0, startDate=Thu May 19 15:41:29 EEST 2016, endDate=Sat Nov 19 00:00:00 EET 2016, type=m, bank=Bank{Aval}, company=Company{id=1, name=MSI, head=Ivanov, accountant=Petrov}, currency=Currency{code=USD, name=US Dollar}}
+2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:73) - Loan was created currency = Loan{amount=10000.56, rate=2.0, startDate=Thu May 19 15:45:14 EEST 2016, endDate=Sat Nov 19 00:00:00 EET 2016, type=m, bank=Bank{Aval}, company=Company{id=1, name=MSI, head=Ivanov, accountant=Petrov}, currency=Currency{code=USD, name=US Dollar}}
+2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:73) - Loan was created currency = Loan{amount=10000.56, rate=2.0, startDate=Thu May 19 15:49:41 EEST 2016, endDate=Sat Nov 19 00:00:00 EET 2016, type=m, bank=Bank{Aval}, company=Company{id=1, name=MSI, head=Ivanov, accountant=Petrov}, currency=Currency{code=USD, name=US Dollar}}
+2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:75) - Loan was added in DB with id = 2

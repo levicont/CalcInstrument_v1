@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -16,30 +18,175 @@
       <TabPane prefHeight="397.0" prefWidth="1192.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
           <Tab text="Кредиты">
-            <content>
-              <AnchorPane prefHeight="368.0" prefWidth="727.0">
-                     <children>
-                        <Button layoutX="39.0" layoutY="314.0" mnemonicParsing="false" text="Добавить" />
-                        <Button layoutX="207.0" layoutY="314.0" mnemonicParsing="false" text="Удалить" />
-                        <Button layoutX="123.0" layoutY="314.0" mnemonicParsing="false" text="Изменить" />
-                        <TableView layoutX="39.0" layoutY="103.0" prefHeight="200.0" prefWidth="881.0">
-                          <columns>
-                            <TableColumn prefWidth="50.999969482421875" />
-                            <TableColumn prefWidth="136.0" text="Название компании" />
-                              <TableColumn minWidth="0.0" prefWidth="116.0" text="Название банка" />
-                              <TableColumn prefWidth="85.0" text="Валюта" />
-                              <TableColumn prefWidth="93.0" text="Сумма" />
-                              <TableColumn prefWidth="66.0" text="Ставка" />
-                              <TableColumn prefWidth="87.0" text="Дата выдачи" />
-                              <TableColumn prefWidth="120.0" text="Дата возврата" />
-                              <TableColumn prefWidth="75.0" text="Тип кредита" />
-                          </columns>
-                        </TableView>
-                        <ComboBox layoutX="33.0" layoutY="52.0" prefWidth="150.0" promptText="Компания" />
-                        <ComboBox layoutX="192.0" layoutY="52.0" prefWidth="150.0" promptText="Банк" />
-                        <ComboBox layoutX="357.0" layoutY="52.0" prefWidth="150.0" promptText="Валюта" />
-                     </children></AnchorPane>
-            </content>
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <SplitPane dividerPositions="0.65" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <items>
+                              <BorderPane>
+                                 <top>
+                                    <HBox prefHeight="40.0" spacing="5.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <ComboBox prefWidth="150.0" promptText="Компания" />
+                                          <ComboBox prefWidth="150.0" promptText="Банк" />
+                                          <ComboBox prefWidth="150.0" promptText="Валюта" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                    </HBox>
+                                 </top>
+                                 <center>
+                                    <TableView prefHeight="299.0" prefWidth="780.0" BorderPane.alignment="CENTER">
+                                      <columns>
+                                        <TableColumn prefWidth="136.0" text="Название компании" />
+                                          <TableColumn minWidth="0.0" prefWidth="116.0" text="Название банка" />
+                                          <TableColumn prefWidth="85.0" text="Валюта" />
+                                          <TableColumn prefWidth="93.0" text="Сумма" />
+                                          <TableColumn prefWidth="66.0" text="Ставка" />
+                                          <TableColumn prefWidth="87.0" text="Дата выдачи" />
+                                          <TableColumn prefWidth="120.0" text="Дата возврата" />
+                                          <TableColumn prefWidth="75.0" text="Тип кредита" />
+                                      </columns>
+                                       <BorderPane.margin>
+                                          <Insets bottom="20.0" />
+                                       </BorderPane.margin>
+                                    </TableView>
+                                 </center>
+                              </BorderPane>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                 <center>
+                                    <GridPane BorderPane.alignment="CENTER">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Организация:" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Банк:" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Валюта:" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Сумма:" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Дата выдачи:" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Дата возврата:" GridPane.rowIndex="6">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label text="Тип кредита:" GridPane.rowIndex="7">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <ComboBox fx:id="cbLoanCompany" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </ComboBox>
+                                          <ComboBox fx:id="cbLoanBank" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </ComboBox>
+                                          <ComboBox fx:id="cbLoanCurrency" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </ComboBox>
+                                          <TextField fx:id="txLoanAmount" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <DatePicker fx:id="dpLoanStartDate" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </DatePicker>
+                                          <DatePicker fx:id="dpLoanEndDate" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </DatePicker>
+                                          <ComboBox fx:id="cbLoanType" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </ComboBox>
+                                       </children>
+                                    </GridPane>
+                                 </center>
+                                 <right>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="btAddLoan" mnemonicParsing="false" text="Добавить" />
+                                          <Button fx:id="btUpdateLoan" mnemonicParsing="false" text="Изменить" />
+                                          <Button fx:id="btDeleteLoan" mnemonicParsing="false" text="Удалить" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="40.0" />
+                                       </padding>
+                                    </VBox>
+                                 </right>
+                              </BorderPane>
+                           </items>
+                        </SplitPane>
+                     </center>
+                  </BorderPane>
+               </content>
           </Tab>
           <Tab text="Валюта">
             <content>

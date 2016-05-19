@@ -5,6 +5,7 @@
  */
 package calcinstr.services;
 
+import calcinstr.exceptions.CalcInstrumentException;
 import calcinstr.models.Currency;
 
 /**
@@ -12,5 +13,5 @@ import calcinstr.models.Currency;
  * @author Victor
  */
 public interface CurrencyService extends GenericService<Currency>{
-    
+  public Currency getCurrencyByName(String name)throws CalcInstrumentException;
 }

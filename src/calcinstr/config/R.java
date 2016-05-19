@@ -51,16 +51,17 @@ public interface R {
         public String GET_CURRENCY_BY_NAME = "SELECT ID_CURRENCY, CODE, NAMED FROM currency WHERE NAMED=?";
     }
     
-     public interface LoanSQL{        
+     public interface LoanSQL{ 
+        public String LOAN_ID_COLUMN_NAME = "ID_LOAN"; 
         public String ALL_LOANS_SQL = "SELECT ID_LOAN, ID_COMPANIES, ID_BANKS, ID_CURRENCY,"
                 + "AMOUNT, INTEREST, START_DATE, END_DATE, TYPE_LOAN FROM loans";
-        public String GET_BANK_BY_ID_SQL = "SELECT ID_LOAN, ID_COMPANIES, ID_BANKS, ID_CURRENCY,"
+        public String GET_LOAN_BY_ID_SQL = "SELECT ID_LOAN, ID_COMPANIES, ID_BANKS, ID_CURRENCY,"
                 + "AMOUNT, INTEREST, START_DATE, END_DATE, TYPE_LOAN FROM loans WHERE ID_LOAN=?";
-        public String ADD_BANK_SQL = "INSERT INTO loans(ID_COMPANIES, ID_BANKS, ID_CURRENCY,"
+        public String ADD_LOAN_SQL = "INSERT INTO loans(ID_COMPANIES, ID_BANKS, ID_CURRENCY,"
                 + "AMOUNT, INTEREST, START_DATE, END_DATE, TYPE_LOAN) VALUES(?,?,?,?,?,?,?,?)";
         
-        public String DELETE_BANK_SQL = "DELETE FROM loans WHERE ID_LOAN=?";
-        public String UPDATE_BANK_SQL = "UPDATE loans SET ID_COMPANIES=?, ID_BANKS=?, ID_CURRENCY=?,"
+        public String DELETE_LOAN_SQL = "DELETE FROM loans WHERE ID_LOAN=?";
+        public String UPDATE_LOAN_SQL = "UPDATE loans SET ID_COMPANIES=?, ID_BANKS=?, ID_CURRENCY=?,"
                 + "AMOUNT=?, INTEREST=?, START_DATE=?, END_DATE=?, TYPE_LOAN=? WHERE ID_LOAN=?";
         
     }

@@ -52,6 +52,10 @@ public class DateUtil {
             return null;
         }
         return SIMPLE_DATE_FORMAT.format(date);
-    }    
+    }
+
+    public static java.sql.Date getSQLDate(Date date){
+        return java.sql.Date.valueOf(getLocalDate(date));
+    }
     
 }
