@@ -15,9 +15,9 @@
 
 <AnchorPane id="AnchorPane" prefHeight="397.0" prefWidth="1192.0" snapToPixel="false" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calcinstr.ui.controllers.MainFrameController">
     <children>
-      <TabPane prefHeight="397.0" prefWidth="1192.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TabPane fx:id="tabPaneMain" prefHeight="397.0" prefWidth="1192.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
-          <Tab text="Кредиты">
+          <Tab fx:id="tabLoans" text="Кредиты">
                <content>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
@@ -143,7 +143,7 @@
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </ComboBox>
-                                          <ComboBox fx:id="cbLoanCurrency" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                          <ComboBox fx:id="cbLoanCurrency" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3">
                                              <GridPane.margin>
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
@@ -210,7 +210,7 @@
                   </BorderPane>
                </content>
           </Tab>
-          <Tab text="Валюта">
+          <Tab fx:id="tabCurrencies" text="Валюта">
                <content>
                   <FlowPane prefHeight="200.0" prefWidth="200.0">
                      <children>
@@ -306,7 +306,7 @@
                   </FlowPane>
                </content>
           </Tab>
-            <Tab text="Банки">
+            <Tab fx:id="tabBanks" text="Банки">
                <content>
                   <FlowPane prefHeight="200.0" prefWidth="200.0">
                      <children>
@@ -329,22 +329,22 @@
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </TextField>
-                                          <Button fx:id="btAddBank" mnemonicParsing="false" text="Добавить" GridPane.rowIndex="3">
+                                          <Button fx:id="btAddBank" mnemonicParsing="false" onAction="#addBank" text="Добавить" GridPane.rowIndex="3">
                                              <GridPane.margin>
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </Button>
-                                          <Button fx:id="btUpdateBank" mnemonicParsing="false" text="Изменить" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                                          <Button fx:id="btUpdateBank" mnemonicParsing="false" onAction="#editBank" text="Изменить" GridPane.columnSpan="2" GridPane.rowIndex="4">
                                              <GridPane.margin>
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </Button>
-                                          <Button fx:id="btDeleteBank" mnemonicParsing="false" prefHeight="24.0" prefWidth="67.0" text="Удалить" GridPane.rowIndex="5">
+                                          <Button fx:id="btDeleteBank" mnemonicParsing="false" onAction="#deleteBank" prefHeight="24.0" prefWidth="67.0" text="Удалить" GridPane.rowIndex="5">
                                              <GridPane.margin>
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </Button>
-                                          <Button fx:id="btSaveBank" mnemonicParsing="false" text="Сохранить" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                          <Button fx:id="btSaveBank" mnemonicParsing="false" onAction="#saveBank" text="Сохранить" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                              <GridPane.margin>
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
@@ -385,7 +385,7 @@
                   </FlowPane>
                </content>
             </Tab>
-            <Tab text="Компании">
+            <Tab fx:id="tabCompanies" text="Компании">
                <content>
                   <FlowPane prefHeight="200.0" prefWidth="200.0">
                      <children>
@@ -493,7 +493,7 @@
                   </FlowPane>
                </content>
             </Tab>
-            <Tab text="Расчеты">
+            <Tab fx:id="tabCalculation" text="Расчеты">
               <content>
                 <AnchorPane />
               </content>

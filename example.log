@@ -13,3 +13,302 @@
 2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:73) - Loan was created currency = Loan{amount=10000.56, rate=2.0, startDate=Thu May 19 15:45:14 EEST 2016, endDate=Sat Nov 19 00:00:00 EET 2016, type=m, bank=Bank{Aval}, company=Company{id=1, name=MSI, head=Ivanov, accountant=Petrov}, currency=Currency{code=USD, name=US Dollar}}
 2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:73) - Loan was created currency = Loan{amount=10000.56, rate=2.0, startDate=Thu May 19 15:49:41 EEST 2016, endDate=Sat Nov 19 00:00:00 EET 2016, type=m, bank=Bank{Aval}, company=Company{id=1, name=MSI, head=Ivanov, accountant=Petrov}, currency=Currency{code=USD, name=US Dollar}}
 2016-05-19 DEBUG [main] (LoanServiceJavaDBImpl.java:75) - Loan was added in DB with id = 2
+2016-05-20  INFO [main] (DBManager.java:28) - The DataBase connection is established
+2016-05-20  INFO [main] (DBManager.java:28) - The DataBase connection is established
+2016-05-20  INFO [main] (DBManager.java:28) - The DataBase connection is established
+2016-05-20  INFO [main] (DBManager.java:28) - The DataBase connection is established
+2016-05-20  INFO [main] (DBManager.java:28) - The DataBase connection is established
+2016-05-20  INFO [main] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [main] (DBManager.java:65) - Table banks not found
+2016-05-20  WARN [main] (DBManager.java:72) - Table banks could not be created
+2016-05-20  WARN [main] (DBManager.java:89) - Table company not found
+2016-05-20  WARN [main] (DBManager.java:96) - Table company could not be created
+2016-05-20  WARN [main] (DBManager.java:113) - Table currency not found
+2016-05-20  WARN [main] (DBManager.java:120) - Table currency could not be created
+2016-05-20  WARN [main] (DBManager.java:137) - Table loan not found
+2016-05-20  WARN [main] (DBManager.java:144) - Table loan could not be created
+2016-05-20  INFO [main] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [main] (DBManager.java:65) - Table banks not found
+2016-05-20  WARN [main] (DBManager.java:72) - Table banks could not be created
+2016-05-20  WARN [main] (DBManager.java:89) - Table company not found
+2016-05-20  WARN [main] (DBManager.java:96) - Table company could not be created
+2016-05-20  WARN [main] (DBManager.java:113) - Table currency not found
+2016-05-20  WARN [main] (DBManager.java:120) - Table currency could not be created
+2016-05-20  WARN [main] (DBManager.java:137) - Table loan not found
+2016-05-20  WARN [main] (DBManager.java:144) - Table loan could not be created
+2016-05-20  INFO [main] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [main] (DBManager.java:65) - Table banks not found
+2016-05-20  WARN [main] (DBManager.java:72) - Table banks could not be created Метод Statement.executeQuery() нельзя вызвать в сочетании с оператором, который возвращает число строк.
+2016-05-20  WARN [main] (DBManager.java:89) - Table company not found
+2016-05-20  WARN [main] (DBManager.java:96) - Table company could not be created
+2016-05-20  WARN [main] (DBManager.java:113) - Table currency not found
+2016-05-20  WARN [main] (DBManager.java:120) - Table currency could not be created
+2016-05-20  WARN [main] (DBManager.java:137) - Table loan not found
+2016-05-20  WARN [main] (DBManager.java:144) - Table loan could not be created
+2016-05-20  INFO [main] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [main] (DBManager.java:65) - Table banks not found
+2016-05-20  WARN [main] (DBManager.java:72) - Table banks could not be created Метод Statement.executeQuery() нельзя вызвать в сочетании с оператором, который возвращает число строк.
+2016-05-20  WARN [main] (DBManager.java:89) - Table company not found
+2016-05-20  WARN [main] (DBManager.java:96) - Table company could not be created
+2016-05-20  WARN [main] (DBManager.java:113) - Table currency not found
+2016-05-20  WARN [main] (DBManager.java:120) - Table currency could not be created
+2016-05-20  WARN [main] (DBManager.java:137) - Table loan not found
+2016-05-20  WARN [main] (DBManager.java:144) - Table loan could not be created
+2016-05-20  INFO [main] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [main] (DBManager.java:65) - Table banks not found
+2016-05-20  WARN [main] (DBManager.java:89) - Table company not found
+2016-05-20  WARN [main] (DBManager.java:96) - Table company could not be created
+2016-05-20  WARN [main] (DBManager.java:113) - Table currency not found
+2016-05-20  WARN [main] (DBManager.java:120) - Table currency could not be created
+2016-05-20  WARN [main] (DBManager.java:137) - Table loan not found
+2016-05-20  WARN [main] (DBManager.java:144) - Table loan could not be created
+2016-05-20  INFO [main] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [main] (DBManager.java:62) - Table banks found
+2016-05-20  WARN [main] (DBManager.java:89) - Table company not found
+2016-05-20  WARN [main] (DBManager.java:96) - Table company could not be created
+2016-05-20  WARN [main] (DBManager.java:113) - Table currency not found
+2016-05-20  WARN [main] (DBManager.java:120) - Table currency could not be created
+2016-05-20  WARN [main] (DBManager.java:137) - Table loan not found
+2016-05-20  WARN [main] (DBManager.java:144) - Table loan could not be created
+2016-05-20  INFO [main] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [main] (DBManager.java:62) - Table banks found
+2016-05-20  WARN [main] (DBManager.java:89) - Table company not found
+2016-05-20  WARN [main] (DBManager.java:113) - Table currency not found
+2016-05-20  WARN [main] (DBManager.java:137) - Table loan not found
+2016-05-20  INFO [main] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [main] (DBManager.java:62) - Table banks found
+2016-05-20 DEBUG [main] (DBManager.java:86) - Table company found
+2016-05-20 DEBUG [main] (DBManager.java:110) - Table currency found
+2016-05-20 DEBUG [main] (DBManager.java:134) - Table loan found
+2016-05-20  INFO [main] (DBManager.java:35) - The DataBase connection is established
+2016-05-20 DEBUG [main] (DBManager.java:63) - Table banks found
+2016-05-20 DEBUG [main] (DBManager.java:87) - Table company found
+2016-05-20 DEBUG [main] (DBManager.java:111) - Table currency found
+2016-05-20 DEBUG [main] (DBManager.java:135) - Table loan found
+2016-05-20  INFO [main] (DBManager.java:35) - The DataBase connection is established
+2016-05-20 DEBUG [main] (DBManager.java:63) - Table banks found
+2016-05-20 DEBUG [main] (DBManager.java:87) - Table company found
+2016-05-20 DEBUG [main] (DBManager.java:111) - Table currency found
+2016-05-20 DEBUG [main] (DBManager.java:135) - Table loan found
+2016-05-20  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-20  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-20  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-20  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-20  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-20  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:211) - INITIALIZING Properties Pane
+2016-05-20  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:211) - INITIALIZING Properties Pane
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:241) - Loaded 0 records
+2016-05-20  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:229) - INITIALIZING Properties Pane
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:267) - Loaded 0 records in currency table
+2016-05-20  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:232) - INITIALIZING Properties Pane
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:402) - Loaded 0 records in currency table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:366) - Loaded 0 records in bank table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:331) - Loaded 0 records in company table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:292) - Loaded 0 records in loan table
+2016-05-20  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:233) - INITIALIZING Properties Pane
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:422) - Loaded 0 records from currency table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:367) - Loaded 0 records from bank table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:332) - Loaded 0 records from company table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:293) - Loaded 0 records from loan table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:467) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:467) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:467) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:467) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:467) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:467) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:467) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:467) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:467) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:467) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:467) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:467) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:467) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:467) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:467) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:467) - VALIDATE LISTENER: invalidation in textField
+2016-05-20  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:228) - INITIALIZING Properties Pane
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:450) - Loaded 0 records from currency table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:362) - Loaded 0 records from bank table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:327) - Loaded 0 records from company table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:288) - Loaded 0 records from loan table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:493) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:493) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:493) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:493) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:403) - SAVE Bank: bank iserted in DB
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:493) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:403) - SAVE Bank: bank iserted in DB
+2016-05-20  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:228) - INITIALIZING Properties Pane
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:450) - Loaded 0 records from currency table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:362) - Loaded 2 records from bank table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:327) - Loaded 0 records from company table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:288) - Loaded 0 records from loan table
+2016-05-20  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:228) - INITIALIZING Properties Pane
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:451) - Loaded 0 records from currency table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:363) - Loaded 2 records from bank table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:327) - Loaded 0 records from company table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:288) - Loaded 0 records from loan table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:404) - SAVE Bank: bank iserted in DB
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:404) - SAVE Bank: bank iserted in DB
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:503) - VALIDATE LISTENER: invalidation in textField
+2016-05-20  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:230) - INITIALIZING Properties Pane
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:463) - Loaded 0 records from currency table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:365) - Loaded 4 records from bank table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:329) - Loaded 0 records from company table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:290) - Loaded 0 records from loan table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:515) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:515) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:428) - CANCEL CHOISED!
+2016-05-20  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-20 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:230) - INITIALIZING Properties Pane
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:463) - Loaded 0 records from currency table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:365) - Loaded 4 records from bank table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:329) - Loaded 0 records from company table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:290) - Loaded 0 records from loan table
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:515) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:515) - VALIDATE LISTENER: invalidation in textField
+2016-05-20 DEBUG [JavaFX Application Thread] (MainFrameController.java:426) - YES CHOISED!

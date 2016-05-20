@@ -10,17 +10,25 @@ package calcinstr.config;
  * @author Victor
  */
 public interface R {
+    public interface ApplicationSettings{
+        public String APP_TITLE = "CalcInstrument_v1";
+    }
+    
     public interface ModelSettings{
         public int DEFAULT_ID = 0;
         public String EMPTY_STRING = "";
     }
     
     public interface DBSettings{
-        public String DRIVER_NAME = "org.apache.derby.jdbc.ClientDriver";
-        public String DB_URL = "jdbc:derby://localhost:1527/Loans;create=true";
+        public String DRIVER_NAME = "org.apache.derby.jdbc.EmbeddedDriver";
+        public String DB_URL = "jdbc:derby:Loans;create=true";
     }
     
-    public interface BankSQL{        
+    public interface BankSQL{ 
+        public String CREATE_TABLE_BANKS_SQL = "CREATE TABLE BANKS" +
+                       "(ID_BANKS INTEGER NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY," +
+                       "NAMED VARCHAR(100) CONSTRAINT NREQ NOT NULL," +
+                        "CONSTRAINT UNIQUEN UNIQUE (NAMED) )";         
         public String ALL_BANKS_SQL = "SELECT ID_BANKS, NAMED FROM banks";
         public String GET_BANK_BY_ID_SQL = "SELECT ID_BANKS, NAMED FROM banks WHERE ID_BANKS=?";
         public String ADD_BANK_SQL = "INSERT INTO banks(named) VALUES(?)";
@@ -30,6 +38,12 @@ public interface R {
     }
     
     public interface CompanySQL{
+        public String CREATE_TABLE_COMPANIES_SQL = "CREATE TABLE COMPANIES" +
+                    "(ID_COMPANIES INTEGER NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY," +
+                    "NAMED VARCHAR(200) NOT NULL, " +
+                    "HEAD VARCHAR(500), " +
+                    "ACCOUNTANT VARCHAR(500), " +                   
+                    "CONSTRAINT UNIQUENC UNIQUE (NAMED) )";
         public String ALL_COMPANIES_SQL = "SELECT ID_COMPANIES, NAMED, HEAD, ACCOUNTANT FROM companies";
         public String GET_COMPANY_BY_ID_SQL = "SELECT ID_COMPANIES, NAMED, HEAD, ACCOUNTANT"
                 + " FROM companies WHERE ID_COMPANIES=?";
@@ -41,7 +55,12 @@ public interface R {
                 + "FROM companies WHERE NAMED=?";
     }
     
-    public interface CurrencySQL{        
+    public interface CurrencySQL{  
+        public String CREATE_TABLE_CURRENCY_SQL = "CREATE TABLE CURRENCY " +
+                "(ID_CURRENCY INTEGER NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY, " +
+                "CODE VARCHAR(50) CONSTRAINT CODEREQ NOT NULL, " +
+                "NAMED VARCHAR(100) CONSTRAINT NAMEDREQ NOT NULL, " +                
+                "CONSTRAINT UNIQUENAMED UNIQUE (NAMED) )";
         public String ALL_CURRENCIES_SQL = "SELECT ID_CURRENCY, CODE, NAMED FROM currency";
         public String GET_CURRENCY_BY_ID_SQL = "SELECT ID_CURRENCY, CODE, NAMED "
                 + "FROM currency WHERE ID_CURRENCY=?";
@@ -51,7 +70,20 @@ public interface R {
         public String GET_CURRENCY_BY_NAME = "SELECT ID_CURRENCY, CODE, NAMED FROM currency WHERE NAMED=?";
     }
     
-     public interface LoanSQL{ 
+     public interface LoanSQL{
+        public String CREATE_TABLE_LOAN_SQL ="CREATE TABLE LOANS " +
+                    "( ID_LOAN INTEGER NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY, " +
+                    "ID_COMPANIES INTEGER, " +
+                    "ID_BANKS INTEGER, " +
+                    "ID_CURRENCY INTEGER, " +
+                    "AMOUNT DECIMAL (20,2)," +
+                    "INTEREST DECIMAL (5,2), " +
+                    "START_DATE DATE, " +
+                    "END_DATE DATE,  " +
+                    "TYPE_LOAN VARCHAR (100), " +                    
+                    "CONSTRAINT FKIN_COMPANIES FOREIGN KEY (ID_COMPANIES) REFERENCES COMPANIES (ID_COMPANIES), " +
+                    "CONSTRAINT FKIN_BANKS FOREIGN KEY (ID_BANKS) REFERENCES BANKS (ID_BANKS), " +
+                    "CONSTRAINT FKIN_CURRENCY FOREIGN KEY (ID_CURRENCY) REFERENCES CURRENCY (ID_CURRENCY) )";
         public String LOAN_ID_COLUMN_NAME = "ID_LOAN"; 
         public String ALL_LOANS_SQL = "SELECT ID_LOAN, ID_COMPANIES, ID_BANKS, ID_CURRENCY,"
                 + "AMOUNT, INTEREST, START_DATE, END_DATE, TYPE_LOAN FROM loans";
@@ -66,11 +98,13 @@ public interface R {
         
     }
     
-    
-    
+    public interface Messages{
+        public String DB_CONNECTED_MSG = "The DataBase connection is established";
+    }    
     
     public interface Errors{
         public String SQL_ERROR = "Ошибка при работе с БД";
+        public String SQL_DATA_IS_UNAVAILEABLE = "Невозможно загрузить данные";
         public String DATA_BASE_CONNECTION_ERROR = "Невозможно установить соединение с БД";
     }
 }

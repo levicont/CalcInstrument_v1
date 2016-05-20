@@ -7,6 +7,7 @@ package calcinstr;
  */
 
 
+import calcinstr.config.R;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,10 +23,9 @@ public class CalcInstrument_v1 extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("ui/fxml/main_frame.fxml"));
-        
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
+                
+        stage.setTitle(R.ApplicationSettings.APP_TITLE);
+        stage.setScene(new Scene(root));
         stage.show();
     }
 
