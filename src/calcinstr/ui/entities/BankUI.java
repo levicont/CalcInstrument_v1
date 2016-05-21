@@ -52,5 +52,12 @@ public class BankUI {
     public SimpleStringProperty nameProperty(){
         return name;
     }
+
+    @Override
+    public String toString() {
+        return name.get();
+    }
+    
+    
     
 }

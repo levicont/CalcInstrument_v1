@@ -65,6 +65,11 @@ public class ControlFXUtils {
         tableView.fireEvent(EventFXUtil.getMouseClickEvent());
         tableView.requestFocus();
     }
+    
+    public static void selectTableItem(TableView tableView, Object item){
+        tableView.getSelectionModel().select(item);
+        tableView.fireEvent(EventFXUtil.getMouseClickEvent());
+    }
 
     public static void setDisabledTitlePane(boolean disabled, TitledPane titledPane){
         if (titledPane == null)
@@ -87,6 +92,22 @@ public class ControlFXUtils {
 
         Optional<ButtonType> result = alert.showAndWait();
         return result;
+    }
+    
+    public static void showErrorDialog(String message){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Ошибка");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();       
+    }
+    
+    public static void showWarningDialog(String message){
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Предупреждение");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();       
     }
 
     /*public static void initTabPanes(Pane... panes){

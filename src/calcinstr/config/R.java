@@ -5,6 +5,9 @@
  */
 package calcinstr.config;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author Victor
@@ -17,6 +20,18 @@ public interface R {
     public interface ModelSettings{
         public int DEFAULT_ID = 0;
         public String EMPTY_STRING = "";
+        public String YEAR_LOAN_TYPE_KEY = "year";
+        public String MOUNTH_LOAN_TYPE_KEY = "mounth";
+        public Map<String,String> LOAN_TYPES = new HashMap<String,String>(){{
+            put(MOUNTH_LOAN_TYPE_KEY,"мес");
+            put(YEAR_LOAN_TYPE_KEY,"год");
+            }};
+        public String ALL_COMPANY_FILTER_NAME = "Все компании";
+        public String ALL_BANK_FILTER_NAME = "Все банки";
+        public String ALL_CURRENCY_FILTER_NAME = "Все валюты";
+        
+    
+        
     }
     
     public interface DBSettings{
@@ -106,5 +121,7 @@ public interface R {
         public String SQL_ERROR = "Ошибка при работе с БД";
         public String SQL_DATA_IS_UNAVAILEABLE = "Невозможно загрузить данные";
         public String DATA_BASE_CONNECTION_ERROR = "Невозможно установить соединение с БД";
+        public String DELETE_ITEM_ERROR = "Невозможно удалить запись";
+        public String SAVE_ITEM_ERROR = "Невозможно сохранить запись";
     }
 }

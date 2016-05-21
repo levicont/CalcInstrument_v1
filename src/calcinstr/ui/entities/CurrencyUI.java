@@ -72,7 +72,7 @@ public class CurrencyUI {
 
     @Override
     public String toString() {
-        return name.get() + "(" + code.get() + '}';
+        return name.get() + "(" + code.get() + ')';
     }
     
     

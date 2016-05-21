@@ -78,11 +78,11 @@ public class CompanyUI {
     }
     
     public void setHead(String head){
-        this.name.set(head);
+        this.head.set(head);
     }
     
     public void setAccountant(String accountant){
-        this.name.set(accountant);
+        this.accountant.set(accountant);
     }
 
     @Override

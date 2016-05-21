@@ -5,6 +5,7 @@
  */
 package calcinstr.ui.entities;
 
+import calcinstr.config.R;
 import calcinstr.models.Loan;
 import calcinstr.util.DateUtil;
 import java.math.BigDecimal;
@@ -44,8 +45,23 @@ public class LoanUI {
         
         bank.set(new BankUI(loan.getBank()));
         company.set(new CompanyUI(loan.getCompany()));
-        currency.set(new CurrencyUI(loan.getCurrency()));
+        currency.set(new CurrencyUI(loan.getCurrency()));        
+    }
+    
+    public LoanUI(){
+        id.set(R.ModelSettings.DEFAULT_ID);
+        amount.set(BigDecimal.ZERO);
+        rate.set(BigDecimal.ZERO);
+        startDate.set(new Date());
+        startDateFormat.set(DateUtil.format(startDate.get()));
+        endDate.set(new Date());
+        endDateFormat.set(DateUtil.format(endDate.get()));
+        type.set(R.ModelSettings.LOAN_TYPES.get(R.ModelSettings.YEAR_LOAN_TYPE_KEY));
         
+        bank.set(new BankUI());
+        company.set(new CompanyUI());
+        currency.set(new CurrencyUI());        
+    
     }
 
     public SimpleIntegerProperty idProperty() {

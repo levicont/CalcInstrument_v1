@@ -27,9 +27,9 @@
                                  <top>
                                     <HBox prefHeight="40.0" spacing="5.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <ComboBox fx:id="cbLoanCompanyFilter" prefWidth="150.0" promptText="Компания" />
-                                          <ComboBox fx:id="cbLoanBankFilter" prefWidth="150.0" promptText="Банк" />
-                                          <ComboBox fx:id="cbLoanCurrencyFilter" prefWidth="150.0" promptText="Валюта" />
+                                          <ComboBox fx:id="cbLoanCompanyFilter" prefWidth="150.0" />
+                                          <ComboBox fx:id="cbLoanBankFilter" prefWidth="150.0" />
+                                          <ComboBox fx:id="cbLoanCurrencyFilter" prefWidth="150.0" />
                                        </children>
                                        <padding>
                                           <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
@@ -59,9 +59,10 @@
                                  <center>
                                     <GridPane BorderPane.alignment="CENTER">
                                       <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="10.0" />
                                       </columnConstraints>
                                       <rowConstraints>
                                         <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
@@ -74,10 +75,50 @@
                                           <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
                                           <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
                                         <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
                                       </rowConstraints>
                                        <children>
-                                          <Label text="Организация:" GridPane.rowIndex="1">
+                                          <ComboBox fx:id="cbLoanCompany" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </ComboBox>
+                                          <ComboBox fx:id="cbLoanBank" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </ComboBox>
+                                          <ComboBox fx:id="cbLoanCurrency" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </ComboBox>
+                                          <TextField fx:id="txfLoanAmount" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txfLoanRate" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <DatePicker fx:id="dpLoanStartDate" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </DatePicker>
+                                          <DatePicker fx:id="dpLoanEndDate" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </DatePicker>
+                                          <ComboBox fx:id="cbLoanType" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="8">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </ComboBox>
+                                          <Label text="Компания" GridPane.rowIndex="1">
                                              <font>
                                                 <Font size="13.0" />
                                              </font>
@@ -133,41 +174,6 @@
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </Label>
-                                          <ComboBox fx:id="cbLoanCompany" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
-                                             <GridPane.margin>
-                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                                             </GridPane.margin>
-                                          </ComboBox>
-                                          <ComboBox fx:id="cbLoanBank" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
-                                             <GridPane.margin>
-                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                                             </GridPane.margin>
-                                          </ComboBox>
-                                          <ComboBox fx:id="cbLoanCurrency" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3">
-                                             <GridPane.margin>
-                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                                             </GridPane.margin>
-                                          </ComboBox>
-                                          <TextField fx:id="txfLoanAmount" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                                             <GridPane.margin>
-                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                                             </GridPane.margin>
-                                          </TextField>
-                                          <DatePicker fx:id="dpLoanStartDate" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6">
-                                             <GridPane.margin>
-                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                                             </GridPane.margin>
-                                          </DatePicker>
-                                          <DatePicker fx:id="dpLoanEndDate" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7">
-                                             <GridPane.margin>
-                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                                             </GridPane.margin>
-                                          </DatePicker>
-                                          <ComboBox fx:id="cbLoanType" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="8">
-                                             <GridPane.margin>
-                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                                             </GridPane.margin>
-                                          </ComboBox>
                                           <Label text="Ставка:" GridPane.rowIndex="5">
                                              <font>
                                                 <Font size="13.0" />
@@ -176,23 +182,27 @@
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </Label>
-                                          <TextField fx:id="txfLoanRate" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                          <Button fx:id="btCalculate" mnemonicParsing="false" onAction="#calculateLoan" text="Расчет платежа" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
                                              <GridPane.margin>
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
-                                          </TextField>
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="3" GridPane.rowSpan="2147483647" />
                                        </children>
                                     </GridPane>
                                  </center>
                                  <right>
-                                    <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
+                                    <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="90.0" spacing="5.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <Button fx:id="btAddLoan" mnemonicParsing="false" text="Добавить" />
-                                          <Button fx:id="btUpdateLoan" mnemonicParsing="false" text="Изменить" />
-                                          <Button fx:id="btSaveLoan1" mnemonicParsing="false" text="Сохранить" />
-                                          <Button fx:id="btDeleteLoan" mnemonicParsing="false" text="Удалить">
+                                          <Button fx:id="btAddLoan" minWidth="-Infinity" mnemonicParsing="false" onAction="#addLoan" prefWidth="70.0" text="Добавить" />
+                                          <Button fx:id="btUpdateLoan" minWidth="-Infinity" mnemonicParsing="false" onAction="#editLoan" prefWidth="70.0" text="Изменить" />
+                                          <Button fx:id="btSaveLoan" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveLoan" prefWidth="70.0" text="Сохранить" />
+                                          <Button fx:id="btDeleteLoan" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteLoan" prefWidth="70.0" text="Удалить">
                                              <VBox.margin>
-                                                <Insets top="80.0" />
+                                                <Insets top="20.0" />
                                              </VBox.margin></Button>
                                        </children>
                                        <padding>
@@ -210,7 +220,7 @@
                   </BorderPane>
                </content>
           </Tab>
-          <Tab fx:id="tabCurrencies" text="Валюта">
+          <Tab fx:id="tabCurrensies" text="Валюта">
                <content>
                   <FlowPane prefHeight="200.0" prefWidth="200.0">
                      <children>
@@ -247,7 +257,17 @@
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                       </rowConstraints>
                                        <children>
-                                          <Label text="Код валюты:" GridPane.rowIndex="1">
+                                          <TextField fx:id="txfCurrencyName" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txfCurrencyCode" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <Label text="Код валюты:" GridPane.rowIndex="2">
                                              <font>
                                                 <Font size="13.0" />
                                              </font>
@@ -255,7 +275,7 @@
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </Label>
-                                          <Label text="Название валюты:" GridPane.rowIndex="2">
+                                          <Label text="Название валюты:" GridPane.rowIndex="1">
                                              <font>
                                                 <Font size="13.0" />
                                              </font>
@@ -263,32 +283,22 @@
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </Label>
-                                          <TextField fx:id="txfCurrencyCode" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
-                                             <GridPane.margin>
-                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                                             </GridPane.margin>
-                                          </TextField>
-                                          <TextField fx:id="txfCurrencyName" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
-                                             <GridPane.margin>
-                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                                             </GridPane.margin>
-                                          </TextField>
-                                          <Button fx:id="btAddCurrency" mnemonicParsing="false" text="Добавить" GridPane.rowIndex="4">
+                                          <Button fx:id="btAddCurrency" mnemonicParsing="false" onAction="#addCurrency" text="Добавить" GridPane.rowIndex="4">
                                              <GridPane.margin>
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </Button>
-                                          <Button fx:id="btUpdateCurrency" mnemonicParsing="false" text="Изменить" GridPane.columnSpan="2" GridPane.rowIndex="5">
+                                          <Button fx:id="btUpdateCurrency" mnemonicParsing="false" onAction="#editCurrency" text="Изменить" GridPane.columnSpan="2" GridPane.rowIndex="5">
                                              <GridPane.margin>
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </Button>
-                                          <Button fx:id="btDeleteCurrency" mnemonicParsing="false" prefHeight="24.0" prefWidth="67.0" text="Удалить" GridPane.rowIndex="6">
+                                          <Button fx:id="btDeleteCurrency" mnemonicParsing="false" onAction="#deleteCurrency" prefHeight="24.0" prefWidth="67.0" text="Удалить" GridPane.rowIndex="6">
                                              <GridPane.margin>
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </Button>
-                                          <Button fx:id="btSaveCurrency" mnemonicParsing="false" text="Сохранить" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                          <Button fx:id="btSaveCurrency" mnemonicParsing="false" onAction="#saveCurrency" text="Сохранить" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                              <GridPane.margin>
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
@@ -395,6 +405,21 @@
                                  <right>
                                     <GridPane BorderPane.alignment="CENTER">
                                        <children>
+                                          <TextField fx:id="txfCompanyName" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txfCompanyHead" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txfCompanyAccountant" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </GridPane.margin>
+                                          </TextField>
                                           <Label text="Название компании:" GridPane.rowIndex="1">
                                              <font>
                                                 <Font size="13.0" />
@@ -411,32 +436,22 @@
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </Label>
-                                          <TextField fx:id="txfCompanyName" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
-                                             <GridPane.margin>
-                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                                             </GridPane.margin>
-                                          </TextField>
-                                          <TextField fx:id="txfCompanyHead" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
-                                             <GridPane.margin>
-                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                                             </GridPane.margin>
-                                          </TextField>
-                                          <Button fx:id="btAddCompany" mnemonicParsing="false" text="Добавить" GridPane.rowIndex="5">
+                                          <Button fx:id="btAddCompany" mnemonicParsing="false" onAction="#addCompany" text="Добавить" GridPane.rowIndex="5">
                                              <GridPane.margin>
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </Button>
-                                          <Button fx:id="btUpdateCompany" mnemonicParsing="false" text="Изменить" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                                          <Button fx:id="btUpdateCompany" mnemonicParsing="false" onAction="#editCompany" text="Изменить" GridPane.columnSpan="2" GridPane.rowIndex="6">
                                              <GridPane.margin>
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </Button>
-                                          <Button fx:id="btDeleteCompany" mnemonicParsing="false" prefHeight="24.0" prefWidth="67.0" text="Удалить" GridPane.rowIndex="7">
+                                          <Button fx:id="btDeleteCompany" mnemonicParsing="false" onAction="#deleteCompany" prefHeight="24.0" prefWidth="67.0" text="Удалить" GridPane.rowIndex="7">
                                              <GridPane.margin>
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </Button>
-                                          <Button fx:id="btSaveCompany" mnemonicParsing="false" text="Сохранить" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                          <Button fx:id="btSaveCompany" mnemonicParsing="false" onAction="#saveCompany" text="Сохранить" GridPane.columnIndex="2" GridPane.rowIndex="4">
                                              <GridPane.margin>
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
@@ -449,11 +464,6 @@
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </Label>
-                                          <TextField fx:id="txfCompanyAccountant" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3">
-                                             <GridPane.margin>
-                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                                             </GridPane.margin>
-                                          </TextField>
                                        </children>
                                        <columnConstraints>
                                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="135.0" prefWidth="140.0" />
@@ -494,9 +504,182 @@
                </content>
             </Tab>
             <Tab fx:id="tabCalculation" text="Расчеты">
-              <content>
-                <AnchorPane />
-              </content>
+               <content>
+                  <FlowPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TitledPane prefHeight="322.0" prefWidth="819.0" text="Расчет платежа по кредиту">
+                           <content>
+                              <GridPane>
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="100.0" prefWidth="140.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="100.0" prefWidth="140.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="100.0" prefWidth="140.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="100.0" prefWidth="140.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Компания" textAlignment="CENTER" GridPane.halignment="CENTER">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Банк" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Валюта" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Тип кредита" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Открытие кредита" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Окончание кредита" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Сумма кредита" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Ставка" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Платеж по кредиту" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
+                                    <Label text="Some company" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Some bank" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Some currency" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Credit type" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="05.05.2016" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="05.05.2017" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="1000.00" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="0.02" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                           </content>
+                           <FlowPane.margin>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </FlowPane.margin>
+                        </TitledPane>
+                     </children>
+                  </FlowPane>
+               </content>
             </Tab>
         </tabs>
       </TabPane>

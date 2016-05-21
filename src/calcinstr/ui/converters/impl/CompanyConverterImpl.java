@@ -22,7 +22,7 @@ public class CompanyConverterImpl implements CompanyConverter{
     
     @Override
     public Company convert(CompanyUI uiModel) throws CalcInstrumentException{
-         if(uiModel == null)
+        if(uiModel == null)
             return null;
         Company company = companyService.get(uiModel.getId());
         if (company != null){
