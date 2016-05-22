@@ -27,7 +27,7 @@ public class DateUtil {
     public static final LocalDate DEFAULT_DATE = LocalDate.of(2000, Month.JANUARY, 1);
     public static final LocalDate TODAY = LocalDate.now();
 
-
+    
     public static LocalDate getLocalDate(Date date) {
         if (date == null)
             return null;
@@ -59,6 +59,19 @@ public class DateUtil {
 
     public static java.sql.Date getSQLDate(Date date){
         return java.sql.Date.valueOf(getLocalDate(date));
+    }
+    
+    public static long getDifferenceDays(Date startDate, Date endDate){
+        // 10.03.16 - 01.03.16 = 9 days
+        LocalDate ldStart = getLocalDate(startDate);
+        LocalDate ldEnd = getLocalDate(endDate);
+               
+        return ldEnd.toEpochDay() - ldStart.toEpochDay();
+                
+    }
+    
+    public static long getDifferenceDays(LocalDate minuend, LocalDate subtrahend){               
+        return minuend.toEpochDay()- subtrahend.toEpochDay();                
     }
     
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package calclinstr.services;
+package calclinstr.servicestest;
 
 import calcinstr.exceptions.CalcInstrumentException;
 import calcinstr.factories.ServiceFactory;

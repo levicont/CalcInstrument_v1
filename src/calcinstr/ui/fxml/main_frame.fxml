@@ -182,7 +182,7 @@
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
                                           </Label>
-                                          <Button fx:id="btCalculate" mnemonicParsing="false" onAction="#calculateLoan" text="Расчет платежа" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
+                                          <Button fx:id="btCalculate" mnemonicParsing="false" onAction="#openCalcLoanTab" text="Расчет платежа" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
                                              <GridPane.margin>
                                                 <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                              </GridPane.margin>
@@ -527,10 +527,8 @@
                                     <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                                  <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="-Infinity" minHeight="30.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
                                     <Label text="Компания" textAlignment="CENTER" GridPane.halignment="CENTER">
@@ -597,7 +595,7 @@
                                           <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Платеж по кредиту" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                                    <Label text="Платеж по кредиту" textAlignment="CENTER" GridPane.halignment="LEFT" GridPane.rowIndex="5">
                                        <font>
                                           <Font size="13.0" />
                                        </font>
@@ -606,7 +604,7 @@
                                        </GridPane.margin>
                                     </Label>
                                     <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
-                                    <Label text="Some company" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                    <Label fx:id="lbCalcCompany" text="---" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
@@ -614,7 +612,7 @@
                                           <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Some bank" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                    <Label fx:id="lbCalcBank" text="---" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
@@ -622,7 +620,7 @@
                                           <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Some currency" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                    <Label fx:id="lbCalcCurrency" text="---" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
@@ -630,7 +628,7 @@
                                           <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="Credit type" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                    <Label fx:id="lbCalcLoanType" text="---" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
@@ -638,7 +636,7 @@
                                           <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="05.05.2016" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                    <Label fx:id="lbCalcLoanStartDate" text="---" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
@@ -646,7 +644,7 @@
                                           <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="05.05.2017" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                    <Label fx:id="lbCalcLoanEndDate" text="---" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
@@ -654,7 +652,7 @@
                                           <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="1000.00" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                    <Label fx:id="lbCalcLoanAmount" text="---" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
@@ -662,7 +660,7 @@
                                           <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Label text="0.02" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                    <Label fx:id="lbCalcLoanRate" text="---" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
@@ -670,6 +668,85 @@
                                           <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                        </GridPane.margin>
                                     </Label>
+                                    <Label text="Сумма погашения:" textAlignment="CENTER" GridPane.rowIndex="6">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Дата погашения:" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Начало периода:" textAlignment="CENTER" GridPane.rowIndex="7">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Окончание периода:" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="7">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <TextField fx:id="txfCalcSumRepayment" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </TextField>
+                                    <DatePicker fx:id="dpCalcDateMonthRepayment" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </DatePicker>
+                                    <DatePicker fx:id="dpCalcStartPeriod" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7">
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </DatePicker>
+                                    <DatePicker fx:id="dpCalcEndPeriod" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="7">
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </DatePicker>
+                                    <Label fx:id="lbCalcTitleAmountForPeriod" text="Сумма процентов за период:" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="8">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="lbCalcAmountForPeriod" layoutX="27.0" layoutY="245.0" text="---" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="60.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Button fx:id="btCalcAmountForPeriod" minWidth="-Infinity" mnemonicParsing="false" onAction="#calculateLoan" prefWidth="100.0" text="Рассчитать" GridPane.columnIndex="4" GridPane.rowIndex="8">
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
                                  </children>
                               </GridPane>
                            </content>

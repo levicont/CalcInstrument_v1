@@ -5,9 +5,11 @@
  */
 package calcinstr.ui.controllers;
 
+import calcinstr.calc.LoanCalculator;
 import calcinstr.config.R;
 import calcinstr.exceptions.CalcInstrumentException;
 import calcinstr.factories.ConvertersFactory;
+import calcinstr.factories.LoanCalculatorFactory;
 import calcinstr.factories.ServiceFactory;
 import calcinstr.models.Bank;
 import calcinstr.models.Company;
@@ -31,10 +33,12 @@ import calcinstr.util.EventFXUtil;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
@@ -45,6 +49,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -59,7 +64,7 @@ import org.apache.log4j.Logger;
  *
  * @author victor
  */
-public class MainFrameController implements Initializable {
+public class MainFrameController implements Initializable, R {
 
     private static final Logger LOGGER = Logger.getLogger(MainFrameController.class);
 
@@ -221,6 +226,42 @@ public class MainFrameController implements Initializable {
     private Button btSaveCompany;
     @FXML
     private Button btDeleteCompany;
+    
+    //Calculator components
+    @FXML
+    private Label lbCalcCompany;
+    @FXML
+    private Label lbCalcBank;
+    @FXML
+    private Label lbCalcCurrency;
+    @FXML
+    private Label lbCalcLoanType;
+    @FXML
+    private Label lbCalcLoanStartDate;
+    @FXML
+    private Label lbCalcLoanEndDate;
+    @FXML
+    private Label lbCalcLoanAmount;
+    @FXML
+    private Label lbCalcLoanRate;
+    
+    @FXML
+    private TextField txfCalcSumRepayment;
+    @FXML
+    private DatePicker dpCalcDateMonthRepayment;
+    @FXML
+    private DatePicker dpCalcStartPeriod;
+    @FXML
+    private DatePicker dpCalcEndPeriod;
+    @FXML
+    private Button btCalcAmountForPeriod;
+    @FXML
+    private Label lbCalcAmountForPeriod;
+    
+            
+    
+    //Status flags
+    private SimpleBooleanProperty isUnderEditingProp = new SimpleBooleanProperty(false);
 
     private ObservableList<CurrencyUI> allCurrencyList = FXCollections.observableArrayList();
     private ObservableList<String> allCurrencyFilterNameList =FXCollections.observableArrayList();
@@ -249,7 +290,18 @@ public class MainFrameController implements Initializable {
         initBankTabPane();
         initCompanyTabPane();
         initLoanTabPane();
+        initFlagProperties();
     }
+    
+    //-- Init FlagProperties
+    
+    private void initFlagProperties(){
+        isUnderEditingProp.set(false);
+        isUnderEditingProp.addListener(new UnderEditingValidateListaner());
+        
+    }
+    
+    
     //-- Init Loan
     private void initLoanTabPane() {
         initLoanTableView();
@@ -264,11 +316,9 @@ public class MainFrameController implements Initializable {
         cbLoanBank.valueProperty().addListener(validateListener);
         cbLoanCompany.valueProperty().addListener(validateListener);
         cbLoanCurrency.valueProperty().addListener(validateListener);
-        cbLoanType.valueProperty().addListener(validateListener);
-        
+        cbLoanType.valueProperty().addListener(validateListener);        
         btSaveLoan.setDisable(true);
-        btAddLoan.setDisable(false);
-
+        isUnderEditingProp.set(false);
     }
 
     private void setDisabledLoanFields(boolean disable) {
@@ -307,7 +357,8 @@ public class MainFrameController implements Initializable {
             LOGGER.debug("Loaded " + allLoanList.size() + " records from loan table");
         } catch (CalcInstrumentException ex) {
             LOGGER.warn(R.Errors.SQL_DATA_IS_UNAVAILEABLE);
-        }
+        }        
+        
     }
     
     private void initLoanComboBoxes(){
@@ -338,6 +389,7 @@ public class MainFrameController implements Initializable {
             return;
         }
         setDisabledLoanFields(false);
+         isUnderEditingProp.set(true);
         cbLoanCompany.requestFocus();
     }
 
@@ -349,12 +401,11 @@ public class MainFrameController implements Initializable {
             return;
         }
             
-        LoanUI newRecordUI = new LoanUI();
-        btAddLoan.setDisable(true);
+        LoanUI newRecordUI = new LoanUI();       
         allLoanList.add(newRecordUI);
         tableLoanView.getSelectionModel().clearSelection();
         tableLoanView.getSelectionModel().select(newRecordUI);
-        tableLoanView.fireEvent(EventFXUtil.getMouseClickEvent());
+        tableLoanView.fireEvent(EventFXUtil.getMouseClickEvent());        
         editLoan();
     }
 
@@ -485,9 +536,135 @@ public class MainFrameController implements Initializable {
 
     //Calculating
     @FXML
-    private void calculateLoan(){
+    private void openCalcLoanTab(){
+        LoanUI selectedLoan = tableLoanView.getSelectionModel().getSelectedItem();
+        if(null == selectedLoan || selectedLoan.getId()<=0){
+            ControlFXUtils.showWarningDialog("Кредит не выбран, или не сохранен в БД");
+            return;
+        }
         tabPaneMain.getSelectionModel().select(tabCalculation);
+         
+        initCalcTab(selectedLoan);
     }
+    
+    private void initCalcTab(LoanUI selectedLoan){
+        lbCalcCompany.setText(selectedLoan.getCompany().toString());
+        lbCalcBank.setText(selectedLoan.getBank().toString());
+        lbCalcCurrency.setText(selectedLoan.getCurrency().toString());
+        lbCalcLoanType.setText(selectedLoan.getType());
+        lbCalcLoanStartDate.setText(selectedLoan.getStartDateFormat());
+        lbCalcLoanEndDate.setText(selectedLoan.getEndDateFormat());
+        lbCalcLoanAmount.setText(selectedLoan.getAmount().toPlainString());
+        lbCalcLoanRate.setText(selectedLoan.getRate().toPlainString());     
+        initCalcInputComponents(selectedLoan);
+        
+        
+    }
+    
+    private void initCalcInputComponents(LoanUI selectedLoan){
+        txfCalcSumRepayment.clear();
+        dpCalcDateMonthRepayment.setValue(null);
+        dpCalcStartPeriod.setValue(null);
+        dpCalcEndPeriod.setValue(null);
+        lbCalcAmountForPeriod.setText("---");
+                
+        if( selectedLoan.getType().equals(ModelSettings.LOAN_TYPES.get(
+                ModelSettings.MOUNTH_LOAN_TYPE_KEY))){
+            txfCalcSumRepayment.setDisable(false);
+            dpCalcDateMonthRepayment.setDisable(false);
+        }else{
+            txfCalcSumRepayment.setDisable(true);
+            dpCalcDateMonthRepayment.setDisable(true);
+        }
+    }
+    
+    @FXML
+    private void calculateLoan(){
+        LoanUI selectedLoan = tableLoanView.getSelectionModel().getSelectedItem();
+        if(null == selectedLoan || selectedLoan.getId()<=0){
+            ControlFXUtils.showWarningDialog("Кредит не выбран, или не сохранен в БД");
+            return;
+        }
+        
+        String loanType = selectedLoan.getType();
+        LoanCalculator calculator = null;
+        BigDecimal result = null;
+        try{
+            Loan loan = loanConverter.convert(selectedLoan);
+            checkCalcFields(selectedLoan.getType());
+            LocalDate Dbp = dpCalcStartPeriod.getValue();
+            LocalDate Dep = dpCalcEndPeriod.getValue();
+            
+            if (loanType.equals(ModelSettings.LOAN_TYPES.get(ModelSettings.MOUNTH_LOAN_TYPE_KEY))){
+                String amountRepaymentStr = txfCalcSumRepayment.getText().trim();
+                BigDecimal amountRepayment = BigDecimal.valueOf(Double.parseDouble(amountRepaymentStr));
+                calculator = LoanCalculatorFactory.getLoanMounthCalculator(loan, 
+                        amountRepayment, dpCalcDateMonthRepayment.getValue());
+                
+            }else{
+                calculator = LoanCalculatorFactory.getLoanYearCalculator(loan);
+                
+            }
+            result = calculator.calculateAmountForPeriod(Dbp, Dep);
+            lbCalcAmountForPeriod.setText(result.toPlainString());
+            LOGGER.info("Result calculating = "+ result.toPlainString());
+        }catch(CalcInstrumentException ex){
+            LOGGER.warn("Incorrect input DATA "+ ex.getMessage());
+            ControlFXUtils.showErrorDialog("Неверные исходные данные \n"+ex.getMessage());
+        }
+    }
+    
+/*  
+	Дата выдачи(Db)
+	Дата окончания(De)
+        Сумма ежемесячного погашения(Sm)
+        Дата ежемесячного погашения	(D)
+        Дата начала периода расчета(Dbp)
+        Дата окончания периода расчета (Dep) 
+*/
+    private void checkCalcFields(String loanType)throws CalcInstrumentException{
+        LoanUI selectedLoan = tableLoanView.getSelectionModel().getSelectedItem();
+        LocalDate Db = DateUtil.getLocalDate(selectedLoan.getStartDate());
+        LocalDate De = DateUtil.getLocalDate(selectedLoan.getEndDate());        
+        LocalDate Dbp = dpCalcStartPeriod.getValue();
+        LocalDate Dep = dpCalcEndPeriod.getValue();
+        
+        if(DateUtil.getDifferenceDays(Dbp, Db) <= 0 ||
+                DateUtil.getDifferenceDays(De, Dbp) <= 0 ||
+                DateUtil.getDifferenceDays(Dep, Dbp) <= 0)
+            throw new CalcInstrumentException("Недопустимое значение границы периода");
+        
+        if(DateUtil.getDifferenceDays(Dep, Db) <= 0 ||
+                DateUtil.getDifferenceDays(De, Dep) <= 0)
+            throw new CalcInstrumentException("Недопустимое значение даты окончания периода");
+        
+        
+        if(loanType.equals(ModelSettings.LOAN_TYPES.get(ModelSettings.MOUNTH_LOAN_TYPE_KEY))){
+            String sumRepaymentStr = txfCalcSumRepayment.getText().trim();
+            if(sumRepaymentStr.isEmpty())
+                throw new CalcInstrumentException("Поле сумма погашения не должно быть пустым");
+            try{
+                Double amount = Double.parseDouble(sumRepaymentStr);
+                if(amount < 0)
+                    throw new CalcInstrumentException("Поле сумма погашения должно положительным");
+            }catch(NumberFormatException ex){
+                    throw new CalcInstrumentException("Неверный формат числа");
+            }
+            
+            LocalDate D = dpCalcDateMonthRepayment.getValue();
+            long diffD_Dbp = DateUtil.getDifferenceDays(D, Dbp);
+            if( diffD_Dbp <=0 )
+                throw new CalcInstrumentException("Недопустимое значение даты погашения");
+            
+            long diffDep_D = DateUtil.getDifferenceDays(Dep, D);
+            if( diffDep_D <= 0 )
+                throw new CalcInstrumentException("Недопустимое значение даты погашения");
+                        
+        }   
+        
+        
+    }
+            
     
     //Init Company
     private void initCompanyTabPane() {
@@ -498,7 +675,7 @@ public class MainFrameController implements Initializable {
         txfCompanyHead.textProperty().addListener(validateListener);
         txfCompanyAccountant.textProperty().addListener(validateListener);
         btSaveCompany.setDisable(true);
-        btAddCompany.setDisable(false);
+        isUnderEditingProp.set(false);
     }
 
     private void setDisabledCompanyFields(boolean disable) {
@@ -539,14 +716,14 @@ public class MainFrameController implements Initializable {
             return;
         }
          setDisabledCompanyFields(false);
+         isUnderEditingProp.set(true);
         txfCompanyName.requestFocus();
     }
 
     @FXML
     private void addCompany() {    
             
-        CompanyUI newRecordUI = new CompanyUI();
-        btAddCompany.setDisable(true);
+        CompanyUI newRecordUI = new CompanyUI();      
         allCompanyList.add(newRecordUI);
         tableCompanyView.getSelectionModel().clearSelection();
         tableCompanyView.getSelectionModel().select(newRecordUI);
@@ -664,8 +841,8 @@ public class MainFrameController implements Initializable {
         setDisabledBankFields(true);
         TextFieldValidateListener validateListener = new TextFieldValidateListener();
         txfBankName.textProperty().addListener(validateListener);
-        btSaveBank.setDisable(true);
-        btAddBank.setDisable(false);
+        btSaveBank.setDisable(true); 
+        isUnderEditingProp.set(false);
     }
 
     private void setDisabledBankFields(boolean disable) {
@@ -704,13 +881,13 @@ public class MainFrameController implements Initializable {
             return;
         }
         setDisabledBankFields(false);
+         isUnderEditingProp.set(true);
         txfBankName.requestFocus();
     }
 
     @FXML
     private void addBank() {
-        BankUI newRecordUI = new BankUI();
-        btAddBank.setDisable(true);
+        BankUI newRecordUI = new BankUI();       
         allBankList.add(newRecordUI);
         tableBankView.getSelectionModel().clearSelection();
         tableBankView.getSelectionModel().select(newRecordUI);
@@ -804,7 +981,8 @@ public class MainFrameController implements Initializable {
         txfCurrencyCode.textProperty().addListener(validateListener);
         txfCurrencyName.textProperty().addListener(validateListener);
         btSaveCurrency.setDisable(true);
-        btAddCurrency.setDisable(false);
+        isUnderEditingProp.set(false);
+       
     }
 
     private void setDisabledCurrencyFields(boolean disabled) {
@@ -844,14 +1022,14 @@ public class MainFrameController implements Initializable {
             return;
         }
         setDisabledCurrencyFields(false);
+         isUnderEditingProp.set(true);
         txfCurrencyName.requestFocus();
     }
 
     @FXML
     private void addCurrency() {    
             
-        CurrencyUI newRecordUI = new CurrencyUI();
-        btAddCurrency.setDisable(true);
+        CurrencyUI newRecordUI = new CurrencyUI();       
         allCurrencyList.add(newRecordUI);
         tableCurrencyView.getSelectionModel().clearSelection();
         tableCurrencyView.getSelectionModel().select(newRecordUI);
@@ -1001,8 +1179,7 @@ public class MainFrameController implements Initializable {
             }
             setDisabledBankFields(true);
             txfBankName.setText(selectedBank.getName());
-            btSaveBank.setDisable(true);
-            btAddBank.setDisable(false);
+            btSaveBank.setDisable(true);           
         }
                 
         private void doSelectLoan() {
@@ -1011,6 +1188,7 @@ public class MainFrameController implements Initializable {
                 return;
             }
             setDisabledLoanFields(true);
+            initCalcTab(selectedLoan);
             cbLoanCompany.setValue(selectedLoan.getCompany());
             cbLoanBank.setValue(selectedLoan.getBank());
             cbLoanCurrency.setValue(selectedLoan.getCurrency());
@@ -1019,8 +1197,7 @@ public class MainFrameController implements Initializable {
             dpLoanStartDate.setValue(DateUtil.getLocalDate(selectedLoan.getStartDate()));
             dpLoanEndDate.setValue(DateUtil.getLocalDate(selectedLoan.getEndDate()));
             cbLoanType.setValue(selectedLoan.getType());
-            btSaveLoan.setDisable(true);
-            btAddLoan.setDisable(false);
+            btSaveLoan.setDisable(true);            
         }
         
         private void doSelectCompany() {
@@ -1032,8 +1209,7 @@ public class MainFrameController implements Initializable {
             txfCompanyName.setText(selectedCompany.getName());
             txfCompanyHead.setText(selectedCompany.getHead());
             txfCompanyAccountant.setText(selectedCompany.getAccountant());
-            btSaveCompany.setDisable(true);
-            btAddCompany.setDisable(false);
+            btSaveCompany.setDisable(true);           
         }
         
          private void doSelectCurrency() {
@@ -1044,8 +1220,7 @@ public class MainFrameController implements Initializable {
             setDisabledCurrencyFields(true);
             txfCurrencyName.setText(selectedCurrency.getName());
             txfCurrencyCode.setText(selectedCurrency.getCode());
-            btSaveCurrency.setDisable(true);
-            btAddCurrency.setDisable(false);
+            btSaveCurrency.setDisable(true);            
         }
     }
 
@@ -1097,6 +1272,13 @@ public class MainFrameController implements Initializable {
             String companyName = cbLoanCompanyFilter.getValue();
             String bankName = cbLoanBankFilter.getValue();
             String currencyName = cbLoanCurrencyFilter.getValue();
+            if (null == companyName)
+                companyName = R.ModelSettings.ALL_COMPANY_FILTER_NAME;
+            if (null == bankName) 
+                bankName = R.ModelSettings.ALL_BANK_FILTER_NAME;
+            if (null == currencyName) {
+                currencyName = R.ModelSettings.ALL_CURRENCY_FILTER_NAME;
+            }
             initAllLoanList();
             ObservableList<LoanUI> filteredByCompanyList = FXCollections.observableArrayList(allLoanList);
             
@@ -1135,6 +1317,40 @@ public class MainFrameController implements Initializable {
         }
         
         
+        
+    }
+    
+    private class UnderEditingValidateListaner implements InvalidationListener{
+
+        @Override
+        public void invalidated(Observable observable) {
+            if(!(observable instanceof SimpleBooleanProperty))
+                return;
+            SimpleBooleanProperty src = (SimpleBooleanProperty)observable;
+            Tab selectedTab = tabPaneMain.getSelectionModel().getSelectedItem();
+            
+            if(selectedTab.equals(tabLoans)){
+                btAddLoan.setDisable(src.getValue());
+                tableLoanView.setDisable(src.getValue());
+                return;
+            }
+            if(selectedTab.equals(tabBanks)){
+                btAddBank.setDisable(src.getValue());
+                tableBankView.setDisable(src.getValue());
+                return;
+            }
+            if(selectedTab.equals(tabCompanies)){
+                btAddCompany.setDisable(src.getValue());
+                tableCompanyView.setDisable(src.getValue());
+                return;
+            }
+            if(selectedTab.equals(tabCurrensies)){
+                btAddCurrency.setDisable(src.getValue());
+                tableCurrencyView.setDisable(src.getValue());
+                return;
+            }
+            
+        }
         
     }
 
