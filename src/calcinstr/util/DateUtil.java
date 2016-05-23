@@ -5,14 +5,13 @@
  */
 package calcinstr.util;
 
+import calcinstr.exceptions.CalcInstrumentException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -61,17 +60,27 @@ public class DateUtil {
         return java.sql.Date.valueOf(getLocalDate(date));
     }
     
-    public static long getDifferenceDays(Date startDate, Date endDate){
+    public static long getDifferenceDays(Date startDate, Date endDate)throws CalcInstrumentException{
         // 10.03.16 - 01.03.16 = 9 days
         LocalDate ldStart = getLocalDate(startDate);
         LocalDate ldEnd = getLocalDate(endDate);
-               
-        return ldEnd.toEpochDay() - ldStart.toEpochDay();
+        try{
+            long result = ldEnd.toEpochDay() - ldStart.toEpochDay();       
+            return result;
+        }catch(Exception ex){
+            throw new CalcInstrumentException("Недопустимое значение даты");
+        }
                 
     }
     
-    public static long getDifferenceDays(LocalDate minuend, LocalDate subtrahend){               
-        return minuend.toEpochDay()- subtrahend.toEpochDay();                
+    public static long getDifferenceDays(LocalDate minuend, LocalDate subtrahend)throws CalcInstrumentException{               
+        try{
+            long result = minuend.toEpochDay() - subtrahend.toEpochDay();       
+            return result;
+        }catch(Exception ex){
+            throw new CalcInstrumentException("Недопустимое значение даты");
+        }
+        
     }
     
 }

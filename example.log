@@ -253,3 +253,112 @@
 2016-05-23 DEBUG [main] (DBManager.java:86) - Table company found
 2016-05-23 DEBUG [main] (DBManager.java:110) - Table currency found
 2016-05-23 DEBUG [main] (DBManager.java:134) - Table loan found
+2016-05-23  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-23 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-23 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-23 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-23 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:284) - INITIALIZING Properties Pane
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:1013) - Loaded 3 records from currency table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:872) - Loaded 4 records from bank table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:707) - Loaded 3 records from company table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:1054) - SAVE Currency: Currency updated in DB
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:1013) - Loaded 3 records from currency table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:1054) - SAVE Currency: Currency updated in DB
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:1013) - Loaded 3 records from currency table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:42) - D - Dbp = 9
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:43) - Dep - D = 22
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:47) - Days in year = 360
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:50) - (R/100) = 0.1000
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:53) - S * (R/100) = 100.00000000
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:57) - (S * (R/100)) / 360 = 0.2778
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:61) - (S * (R/100)) / 360 *(D - Dbp) = 2.5002
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:65) - (S - Sm) = 900.0000
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:69) - (S - Sm)*(R/100) = 90.00000000
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:73) - ((S - Sm)*(R/100))/360 = 0.2500
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:77) - ((S - Sm)*(R/100))/количество дней в году*(Dep-D) = 5.5000
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:81) - ((S - Sm)*(R/100))/количество дней в году*(Dep-D) = 5.5000
+2016-05-23  INFO [JavaFX Application Thread] (MainFrameController.java:610) - Result calculating = 8.00
+2016-05-23  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-23 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-23 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-23 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-23 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:284) - INITIALIZING Properties Pane
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:1013) - Loaded 3 records from currency table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:872) - Loaded 4 records from bank table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:707) - Loaded 3 records from company table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23  WARN [JavaFX Application Thread] (MainFrameController.java:612) - Incorrect input DATA Недопустимое значение даты
+2016-05-23  WARN [JavaFX Application Thread] (MainFrameController.java:612) - Incorrect input DATA Недопустимое значение границы периода
+2016-05-23  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-23 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-23 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-23 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-23 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:284) - INITIALIZING Properties Pane
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:1013) - Loaded 3 records from currency table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:872) - Loaded 4 records from bank table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:707) - Loaded 3 records from company table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23  WARN [JavaFX Application Thread] (MainFrameController.java:612) - Incorrect input DATA Недопустимое значение даты
+2016-05-23  WARN [JavaFX Application Thread] (MainFrameController.java:612) - Incorrect input DATA Неверный формат числа
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:42) - D - Dbp = 352
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:43) - Dep - D = 62
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:47) - Days in year = 360
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:50) - (R/100) = 0.1000
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:53) - S * (R/100) = 1200.00000000
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:57) - (S * (R/100)) / 360 = 3.3333
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:61) - (S * (R/100)) / 360 *(D - Dbp) = 1173.3216
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:65) - (S - Sm) = 11900.0000
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:69) - (S - Sm)*(R/100) = 1190.00000000
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:73) - ((S - Sm)*(R/100))/360 = 3.3056
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:77) - ((S - Sm)*(R/100))/количество дней в году*(Dep-D) = 204.9472
+2016-05-23 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:81) - ((S - Sm)*(R/100))/количество дней в году*(Dep-D) = 204.9472
+2016-05-23  INFO [JavaFX Application Thread] (MainFrameController.java:610) - Result calculating = 1378.27
+2016-05-23  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-23 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-23 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-23 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-23 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:284) - INITIALIZING Properties Pane
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:1013) - Loaded 3 records from currency table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:872) - Loaded 4 records from bank table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:707) - Loaded 3 records from company table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23  WARN [JavaFX Application Thread] (MainFrameController.java:434) - Ошибка при работе с БД message: Неверный формат числа суммы
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23  WARN [JavaFX Application Thread] (MainFrameController.java:434) - Ошибка при работе с БД message: Ошибка при работе с БД
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:916) - SAVE Bank: bank iserted in DB
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:872) - Loaded 5 records from bank table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:961) - OK CHOISED!
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:872) - Loaded 4 records from bank table
+2016-05-23  INFO [JavaFX Application Thread] (MainFrameController.java:965) - Bank was deleted
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:822) - OK CHOISED!
+2016-05-23  WARN [JavaFX Application Thread] (MainFrameController.java:829) - It is not possible delete company from DB message: Ошибка при работе с БД
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:707) - Loaded 3 records from company table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
