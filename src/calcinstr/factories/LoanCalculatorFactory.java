@@ -6,10 +6,10 @@
 package calcinstr.factories;
 
 import calcinstr.calc.LoanCalculator;
+import calcinstr.calc.LoanUAHMonthCalculator;
 import calcinstr.calc.LoanMonthCalculator;
-import calcinstr.calc.LoanUSMonthCalculator;
-import calcinstr.calc.LoanUSYearCalculator;
 import calcinstr.calc.LoanYearCalculator;
+import calcinstr.calc.LoanUAHYearCalculator;
 import calcinstr.config.R;
 import calcinstr.exceptions.CalcInstrumentException;
 import calcinstr.models.Currency;
@@ -23,8 +23,8 @@ import java.time.LocalDate;
  */
 public class LoanCalculatorFactory implements R.ModelSettings {
 
-    private static final String USD_CURRENCY_CODE = "usd";
-    private static final String USD_CURRENCY_NAME = "доллар сша";
+    private static final String UAH_CURRENCY_CODE = "uah";
+    private static final String UAH_CURRENCY_NAME = "гривна украина";
 
     private static LoanCalculator loanMonthCalculator;
     private static LoanCalculator loanUSDMonthCalculator;
@@ -36,27 +36,27 @@ public class LoanCalculatorFactory implements R.ModelSettings {
     }
 
     public static LoanCalculator getLoanYearCalculator(Loan loan) throws CalcInstrumentException {
-        if (isUSDCurrency(loan.getCurrency())) {
-            return new LoanUSYearCalculator(loan);
+        if (!isUAHCurrency(loan.getCurrency())) {
+            return new LoanYearCalculator(loan);
 
         } else {
-            return new LoanYearCalculator(loan);
+            return new LoanUAHYearCalculator(loan);
         }
     }
 
     public static LoanCalculator getLoanMounthCalculator(Loan loan, BigDecimal amountPeriod,
             LocalDate periodDate) throws CalcInstrumentException {
-        if (isUSDCurrency(loan.getCurrency())) {
-            return new LoanUSMonthCalculator(loan, amountPeriod, periodDate);
+        if (!isUAHCurrency(loan.getCurrency())) {
+            return new LoanMonthCalculator(loan, amountPeriod, periodDate);
 
         } else {
-            return new LoanMonthCalculator(loan, amountPeriod, periodDate);
+            return new LoanUAHMonthCalculator(loan, amountPeriod, periodDate);
         }
     }
 
-    private static boolean isUSDCurrency(Currency currency) {
-        return currency.getCode().equalsIgnoreCase(USD_CURRENCY_CODE)
-                || currency.getName().equalsIgnoreCase(USD_CURRENCY_NAME);
+    private static boolean isUAHCurrency(Currency currency) {
+        return currency.getCode().equalsIgnoreCase(UAH_CURRENCY_CODE)
+                || currency.getName().equalsIgnoreCase(UAH_CURRENCY_NAME);
     }
 
 }

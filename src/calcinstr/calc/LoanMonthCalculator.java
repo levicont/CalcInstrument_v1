@@ -5,9 +5,11 @@
  */
 package calcinstr.calc;
 
+import static calcinstr.calc.LoanCalculator.LOGGER;
 import calcinstr.exceptions.CalcInstrumentException;
 import calcinstr.models.Loan;
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 
@@ -15,20 +17,15 @@ import java.time.LocalDate;
  *
  * @author victor
  */
-public class LoanMonthCalculator extends LoanCalculator{
+public class LoanMonthCalculator extends LoanUAHMonthCalculator{
+       
     
-    protected BigDecimal amountRepayment;
-    protected LocalDate dateRepayment;
-    
-    public LoanMonthCalculator(Loan loan, BigDecimal amountRepayment,
-            LocalDate dateRepayment){
-        
-        this.loan = loan;
-        this.amountRepayment = amountRepayment;
-        this.dateRepayment = dateRepayment;
+    public LoanMonthCalculator(Loan loan, BigDecimal amountRepayment, LocalDate dateRepayment){
+        super(loan, amountRepayment, dateRepayment);        
     }
     
-    //(Sp) = (S*(R/100))/количество дней в году*(D - Dbp) + ((S - Sm)*(R/100))/количество дней в году*(Dep-D)
+    
+    //(Sp) = (S*(R/100))/360*(D - Dbp) + (S - Sm)*(R/100))/360*(Dep-D)
     @Override
     public BigDecimal calculateAmountForPeriod(LocalDate startDate, 
             LocalDate endDate) throws CalcInstrumentException {
@@ -46,22 +43,22 @@ public class LoanMonthCalculator extends LoanCalculator{
         LOGGER.debug("Dep - D = "+diffDep_D.toPlainString());
         
         
-        BigDecimal daysInYear = BigDecimal.valueOf(getDaysCountInYear(diffDep_Dbp.longValue(), Dep));
+        BigDecimal daysInYear = BigDecimal.valueOf(DAYS_IN_YEAR_DEFAULT);
         LOGGER.debug("Days in year = "+daysInYear.toPlainString());
         // R/100
         BigDecimal Rdiv100 = R.divide(BigDecimal.valueOf(100.00),4,RoundingMode.HALF_UP);
         LOGGER.debug("(R/100) = "+Rdiv100.toPlainString());
         // S * (R/100)
-        BigDecimal SmultRdiv100 = S.multiply(Rdiv100);
+        BigDecimal SmultRdiv100 = S.multiply(Rdiv100,MathContext.DECIMAL64);
         LOGGER.debug("S * (R/100) = "+SmultRdiv100.toPlainString());
         
         // (S * (R/100)) / Days in year
         BigDecimal SmultRdiv100divDaysInYear = SmultRdiv100.divide(daysInYear,4,RoundingMode.HALF_UP);
-        LOGGER.debug("(S * (R/100)) / Days in year = "+SmultRdiv100divDaysInYear.toPlainString());
+        LOGGER.debug("(S * (R/100)) / 360 = "+SmultRdiv100divDaysInYear.toPlainString());
         
-        // (S * (R/100)) / Days in year*(D - Dbp)
+        // (S * (R/100)) / Days in year *(D - Dbp)
         BigDecimal firstAdder = SmultRdiv100divDaysInYear.multiply(diffD_Dbp);
-        LOGGER.debug("(S * (R/100)) / Days in year*(D - Dbp) = "+firstAdder.toPlainString());
+        LOGGER.debug("(S * (R/100)) / 360 *(D - Dbp) = "+firstAdder.toPlainString());
         
         // (S - Sm)
         BigDecimal diffS_Sm = S.subtract(Sm);
@@ -73,7 +70,7 @@ public class LoanMonthCalculator extends LoanCalculator{
         
         // ((S - Sm)*(R/100))/количество дней в году
         BigDecimal diffS_Sm_mult_persent_divDaysinY = diffS_Sm_mult_persent.divide(daysInYear,4,RoundingMode.HALF_UP);
-        LOGGER.debug("((S - Sm)*(R/100))/количество дней в году = "+diffS_Sm_mult_persent_divDaysinY.toPlainString());
+        LOGGER.debug("((S - Sm)*(R/100))/360 = "+diffS_Sm_mult_persent_divDaysinY.toPlainString());
         
         // ((S - Sm)*(R/100))/количество дней в году*(Dep-D)
         BigDecimal secondAdder = diffS_Sm_mult_persent_divDaysinY.multiply(diffDep_D);
@@ -81,7 +78,10 @@ public class LoanMonthCalculator extends LoanCalculator{
         
         
         BigDecimal result = firstAdder.add(secondAdder).setScale(2, RoundingMode.HALF_UP);
+        LOGGER.debug("((S - Sm)*(R/100))/количество дней в году*(Dep-D) = "+secondAdder.toPlainString());
         return result;
     }
+    
+    
     
 }

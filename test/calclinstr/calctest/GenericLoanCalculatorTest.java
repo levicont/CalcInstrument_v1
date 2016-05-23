@@ -15,6 +15,8 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Date;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
@@ -56,5 +58,14 @@ public class GenericLoanCalculatorTest {
         loan.setStartDate(startDate);
         loan.setEndDate(endDate);
         loan.setType(R.ModelSettings.LOAN_TYPES.get(R.ModelSettings.MOUNTH_LOAN_TYPE_KEY));
+    }
+    
+    @Test
+    public void validModels(){
+        initLoan();
+        assertNotNull(bank);
+        assertNotNull(company);
+        assertNotNull(currency);
+        assertNotNull(loan);
     }
 }

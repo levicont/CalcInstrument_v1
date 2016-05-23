@@ -21,7 +21,7 @@
                <content>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
-                        <SplitPane dividerPositions="0.65" prefWidth="200.0" BorderPane.alignment="CENTER">
+                        <SplitPane dividerPositions="0.63" prefWidth="200.0" BorderPane.alignment="CENTER">
                            <items>
                               <BorderPane>
                                  <top>
@@ -195,12 +195,12 @@
                                     </GridPane>
                                  </center>
                                  <right>
-                                    <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="90.0" spacing="5.0" BorderPane.alignment="CENTER">
+                                    <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <Button fx:id="btAddLoan" minWidth="-Infinity" mnemonicParsing="false" onAction="#addLoan" prefWidth="70.0" text="Добавить" />
-                                          <Button fx:id="btUpdateLoan" minWidth="-Infinity" mnemonicParsing="false" onAction="#editLoan" prefWidth="70.0" text="Изменить" />
-                                          <Button fx:id="btSaveLoan" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveLoan" prefWidth="70.0" text="Сохранить" />
-                                          <Button fx:id="btDeleteLoan" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteLoan" prefWidth="70.0" text="Удалить">
+                                          <Button fx:id="btAddLoan" minWidth="-Infinity" mnemonicParsing="false" onAction="#addLoan" prefWidth="80.0" text="Добавить" />
+                                          <Button fx:id="btUpdateLoan" minWidth="-Infinity" mnemonicParsing="false" onAction="#editLoan" prefWidth="80.0" text="Изменить" />
+                                          <Button fx:id="btSaveLoan" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveLoan" prefWidth="80.0" text="Сохранить" />
+                                          <Button fx:id="btDeleteLoan" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteLoan" prefWidth="80.0" text="Удалить">
                                              <VBox.margin>
                                                 <Insets top="20.0" />
                                              </VBox.margin></Button>
@@ -511,10 +511,10 @@
                            <content>
                               <GridPane>
                                 <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="100.0" prefWidth="140.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="100.0" prefWidth="140.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="100.0" prefWidth="140.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="100.0" prefWidth="140.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="155.0" prefWidth="160.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="155.0" prefWidth="160.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="155.0" prefWidth="170.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="155.0" prefWidth="155.0" />
                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                 </columnConstraints>
@@ -700,7 +700,7 @@
                                           <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <TextField fx:id="txfCalcSumRepayment" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                                    <TextField fx:id="txfCalcSumRepayment" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                        <GridPane.margin>
                                           <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                        </GridPane.margin>

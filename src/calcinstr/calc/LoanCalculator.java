@@ -21,7 +21,7 @@ public abstract class LoanCalculator {
     protected static final Logger LOGGER =  Logger.getLogger(LoanCalculator.class);
     protected final int DAYS_IN_LEAP_YEAR = 366;
     protected final int DAYS_IN_YEAR = 365;
-    protected final int DAYS_IN_YEAR_USD = 360;
+    protected final int DAYS_IN_YEAR_DEFAULT = 360;
     
     protected Loan loan;
 

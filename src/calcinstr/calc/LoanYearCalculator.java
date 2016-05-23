@@ -16,15 +16,14 @@ import java.time.LocalDate;
  *
  * @author victor
  */
-public class LoanYearCalculator extends LoanCalculator {
-
-    public LoanYearCalculator(Loan loan){
-        this.loan = loan;
+public class LoanYearCalculator extends LoanUAHYearCalculator{
+    
+    
+    public LoanYearCalculator(Loan loan) {
+        super(loan);
     }
     
-    
-    
-    //(S*(R/100))/количество дней в году*(Dep - Dbp)
+    //(S*(R/100))/360*(Dep - Dbp)
     @Override
     public BigDecimal calculateAmountForPeriod(LocalDate startDate, 
             LocalDate endDate) throws CalcInstrumentException {
@@ -34,7 +33,7 @@ public class LoanYearCalculator extends LoanCalculator {
         LocalDate Dbp = startDate;
         LocalDate Dep = endDate;
         long diffDays = getDifferenceDays(Dep, Dbp);
-        BigDecimal daysInYear = BigDecimal.valueOf(getDaysCountInYear(diffDays, Dep)).setScale(2);
+        BigDecimal daysInYear = BigDecimal.valueOf(DAYS_IN_YEAR_DEFAULT).setScale(2);
         LOGGER.debug("Days in year = "+daysInYear.toPlainString());
         
         BigDecimal persent = R.divide(BigDecimal.valueOf(100.00),4,RoundingMode.HALF_UP);
@@ -49,6 +48,4 @@ public class LoanYearCalculator extends LoanCalculator {
         BigDecimal result = multPersentDivDaysInYear.multiply(BigDecimal.valueOf(diffDays));
         return result.setScale(2, RoundingMode.HALF_UP);
     }
-    
-    
 }
