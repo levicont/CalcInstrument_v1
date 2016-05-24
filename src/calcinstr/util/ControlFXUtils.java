@@ -109,32 +109,7 @@ public class ControlFXUtils {
         alert.setContentText(message);
         alert.showAndWait();       
     }
-
-    /*public static void initTabPanes(Pane... panes){
-        for (Pane p : panes)
-            p.setStyle(R.UI.Control.GENERIC_STYLE_TAB_BACKGROUND);
-    }
-
-    public static Action getResponseDeleteDialog(int countOfDeletingRecords, Object owner){
-        Action response = Dialogs.create().owner(owner)
-                .title("Удаление записей")
-                .masthead("Сделан выбор записей для удаления")
-                .message("Удалить выбранные записи? ("+countOfDeletingRecords+"шт.)")
-                .actions(org.controlsfx.dialog.Dialog.Actions.OK, org.controlsfx.dialog.Dialog.Actions.CANCEL)
-                .showConfirm();
-        return response;
-    }
-
-    public static Action getResponseSaveRecordDialog(String message, Object owner){
-        Action response = Dialogs.create().owner(owner)
-                .title("Сохранение записи")
-                .masthead("Появились записи которые необходимио сохранить")
-                .message(message)
-                .actions(org.controlsfx.dialog.Dialog.Actions.OK, org.controlsfx.dialog.Dialog.Actions.CANCEL)
-                .showConfirm();
-        return response;
-    }
-*/
+   
     public static  void clearTextFields(TextField ... textFields){
         for (TextField tf : textFields)
             tf.clear();
@@ -148,8 +123,7 @@ public class ControlFXUtils {
     public static void setDisabledTextFields(boolean disabled, TextField ... textFields){
         if (disabled){
             for (TextField tf : textFields){
-                tf.setEditable(false);
-                //tf.setStyle(R.UI.Control.GENERIC_STYLE_NOT_EDITABLE_BACKGROUND);
+                tf.setEditable(false);           
             }
         }else {
             for (TextField tf : textFields){
@@ -161,8 +135,7 @@ public class ControlFXUtils {
     public static void setDisabledComboBoxes(boolean disabled, ComboBox ... comboBoxes){
         if (disabled){
             for (ComboBox cb : comboBoxes) {
-                cb.setDisable(true);
-                //cb.setStyle(R.UI.Control.GENERIC_STYLE_NOT_EDIT_COMBOBOX);
+                cb.setDisable(true);              
             }
         }else
             for (ComboBox cb : comboBoxes) {
@@ -174,10 +147,8 @@ public class ControlFXUtils {
         if (disabled){
             for (DatePicker dp : datePickers) {
 
-                dp.setDisable(true);
-                //dp.setStyle(R.UI.Control.GENERIC_STYLE_NOT_EDIT_DATE_PICKER);
-                setDisabledTextFields(disabled, dp.getEditor());
-                //dp.getEditor().setStyle(R.UI.Control.GENERIC_STYLE_NOT_EDIT_DATE_PICKER);
+                dp.setDisable(true);              
+                setDisabledTextFields(disabled, dp.getEditor());              
             }
         }else
             for (DatePicker dp : datePickers) {
@@ -189,8 +160,7 @@ public class ControlFXUtils {
     public static void setDisabledTextAreas(boolean disable, TextArea ... textAreas){
         if (disable){
             for (TextArea ta : textAreas){
-                ta.setEditable(false);
-                //ta.setStyle(R.UI.Control.GENERIC_STYLE_NOT_EDITABLE_BACKGROUND);
+                ta.setEditable(false);              
                 ta.setOpacity(0.7);
             }
         }else {
@@ -204,9 +174,7 @@ public class ControlFXUtils {
     public static void setDisabledTableViews(boolean disable, TableView ... tableViews){
         if (disable){
             for (TableView tableView : tableViews){
-                //tableView.setDisable(disable);
-                //tableView.setStyle(R.UI.Control.GENERIC_STYLE_NOT_EDIT_TABLE_VIEW);
-
+                tableView.setDisable(disable); 
             }
         }else {
             for (TableView tableView : tableViews){
@@ -219,8 +187,7 @@ public class ControlFXUtils {
     public static void setDisabledListViews(boolean disable, ListView ... listViews){
         if (disable){
             for (ListView listView : listViews){
-                //listView.setDisable(disable);
-                //listView.setStyle(R.UI.Control.GENERIC_STYLE_NOT_EDIT_TABLE_VIEW);
+               listView.setDisable(disable);
             }
         }else {
             for (ListView listView : listViews){
