@@ -362,3 +362,26 @@
 2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
 2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
 2016-05-23 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
+2016-05-24  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-24 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-24 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-24 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-24 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-24 DEBUG [JavaFX Application Thread] (MainFrameController.java:284) - INITIALIZING Properties Pane
+2016-05-24 DEBUG [JavaFX Application Thread] (MainFrameController.java:1013) - Loaded 3 records from currency table
+2016-05-24 DEBUG [JavaFX Application Thread] (MainFrameController.java:872) - Loaded 4 records from bank table
+2016-05-24 DEBUG [JavaFX Application Thread] (MainFrameController.java:707) - Loaded 2 records from company table
+2016-05-24 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 3 records from loan table
+2016-05-24 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:42) - D - Dbp = 9
+2016-05-24 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:43) - Dep - D = 22
+2016-05-24 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:47) - Days in year = 360
+2016-05-24 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:50) - (R/100) = 0.1000
+2016-05-24 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:53) - S * (R/100) = 100.00000000
+2016-05-24 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:57) - (S * (R/100)) / 360 = 0.2778
+2016-05-24 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:61) - (S * (R/100)) / 360 *(D - Dbp) = 2.5002
+2016-05-24 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:65) - (S - Sm) = 950.0000
+2016-05-24 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:69) - (S - Sm)*(R/100) = 95.00000000
+2016-05-24 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:73) - ((S - Sm)*(R/100))/360 = 0.2639
+2016-05-24 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:77) - ((S - Sm)*(R/100))/количество дней в году*(Dep-D) = 5.8058
+2016-05-24 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:81) - ((S - Sm)*(R/100))/количество дней в году*(Dep-D) = 5.8058
+2016-05-24  INFO [JavaFX Application Thread] (MainFrameController.java:610) - Result calculating = 8.31
