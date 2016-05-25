@@ -22,8 +22,7 @@ public class CalcInstrument_v1 extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("ui/fxml/main_frame.fxml"));
-        //setUserAgentStylesheet(STYLESHEET_MODENA);
+        Parent root = FXMLLoader.load(getClass().getResource("ui/fxml/main_frame.fxml"));  
         
         stage.setTitle(R.ApplicationSettings.APP_TITLE);
         stage.setScene(new Scene(root));
