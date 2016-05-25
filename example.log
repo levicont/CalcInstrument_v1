@@ -385,3 +385,13 @@
 2016-05-24 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:77) - ((S - Sm)*(R/100))/количество дней в году*(Dep-D) = 5.8058
 2016-05-24 DEBUG [JavaFX Application Thread] (LoanMonthCalculator.java:81) - ((S - Sm)*(R/100))/количество дней в году*(Dep-D) = 5.8058
 2016-05-24  INFO [JavaFX Application Thread] (MainFrameController.java:610) - Result calculating = 8.31
+2016-05-25  INFO [JavaFX Application Thread] (DBManager.java:34) - The DataBase connection is established
+2016-05-25 DEBUG [JavaFX Application Thread] (DBManager.java:62) - Table banks found
+2016-05-25 DEBUG [JavaFX Application Thread] (DBManager.java:86) - Table company found
+2016-05-25 DEBUG [JavaFX Application Thread] (DBManager.java:110) - Table currency found
+2016-05-25 DEBUG [JavaFX Application Thread] (DBManager.java:134) - Table loan found
+2016-05-25 DEBUG [JavaFX Application Thread] (MainFrameController.java:284) - INITIALIZING Properties Pane
+2016-05-25 DEBUG [JavaFX Application Thread] (MainFrameController.java:1013) - Loaded 3 records from currency table
+2016-05-25 DEBUG [JavaFX Application Thread] (MainFrameController.java:872) - Loaded 4 records from bank table
+2016-05-25 DEBUG [JavaFX Application Thread] (MainFrameController.java:707) - Loaded 3 records from company table
+2016-05-25 DEBUG [JavaFX Application Thread] (MainFrameController.java:357) - Loaded 5 records from loan table
